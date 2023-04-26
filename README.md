@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Development in progress...
+
+## Check out the [Demo](https://marcin10lw.github.io/audiophile-react/)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
