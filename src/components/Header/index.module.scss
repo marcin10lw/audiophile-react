@@ -4,8 +4,24 @@
   background-color: $black;
   padding: 0 40px;
 
-  @include breakpoint(mobile) {
+  @include breakpoint(tablet) {
     padding: 0 24px;
+    position: relative;
+  }
+}
+
+.header__backdrop {
+  display: none;
+
+  @include breakpoint(tablet) {
+    display: block;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.373);
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -23,13 +39,37 @@
 
 .header__logo {
   margin-right: 17.75%;
+  color: $white;
+  @include hoverTransition(color);
+
+  &:hover {
+    color: $orange;
+  }
 
   @include breakpoint(mobile) {
     margin-right: 0;
   }
 }
 
-.header__nav {
+.nav {
+  @include breakpoint(tablet) {
+    position: absolute;
+    z-index: -1;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    min-height: 340px;
+    border-radius: 0 0 7px 7px;
+    background-color: $white;
+    transition: top 500ms ease-in-out;
+  }
+}
+
+.nav--open {
+  top: 100%;
+}
+
+.nav__list {
   @include breakpoint(tablet) {
     display: none;
   }
@@ -56,6 +96,12 @@
 
 .header__button--cart {
   margin-left: auto;
+  color: $white;
+  @include hoverTransition(color);
+
+  &:hover {
+    color: $orange;
+  }
 
   @include breakpoint(mobile) {
     margin-left: 0;
