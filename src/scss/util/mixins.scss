@@ -1,0 +1,15 @@
+@mixin container() {
+  max-width: 1110px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+@mixin flexCenterAlign($direction) {
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin hoverTransition($property) {
+  transition: $property 200ms ease-in-out;
+}

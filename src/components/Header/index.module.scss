@@ -1,0 +1,31 @@
+@use "../../scss/style.scss" as *;
+
+.header {
+  background-color: $black;
+  padding: 0 40px;
+}
+
+.header__wrapper {
+  @include container();
+  @include flexCenterAlign(row);
+  justify-content: space-between;
+  gap: 110px;
+  padding: 35px 0;
+  border-bottom: 1px solid $borderWhite;
+}
+
+.header__nav {
+  @include flexCenterAlign(row);
+  max-width: 767px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header__logo {
+}
+
+.header__cart {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
