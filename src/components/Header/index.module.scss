@@ -3,29 +3,61 @@
 .header {
   background-color: $black;
   padding: 0 40px;
+
+  @include breakpoint(mobile) {
+    padding: 0 24px;
+  }
 }
 
 .header__wrapper {
   @include container();
   @include flexCenterAlign(row);
-  justify-content: space-between;
-  gap: 110px;
   padding: 35px 0;
   border-bottom: 1px solid $borderWhite;
-}
 
-.header__nav {
-  @include flexCenterAlign(row);
-  max-width: 767px;
-  width: 100%;
-  justify-content: space-between;
+  @include breakpoint(tablet) {
+    justify-content: space-between;
+    padding: 32px 0;
+  }
 }
 
 .header__logo {
+  margin-right: 17.75%;
+
+  @include breakpoint(mobile) {
+    margin-right: 0;
+  }
 }
 
-.header__cart {
+.header__nav {
+  @include breakpoint(tablet) {
+    display: none;
+  }
+}
+
+.header__button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.header__button--hamburger {
+  display: none;
+
+  @include breakpoint(tablet) {
+    display: block;
+    margin-right: 42px;
+  }
+
+  @include breakpoint(mobile) {
+    margin-right: 0;
+  }
+}
+
+.header__button--cart {
+  margin-left: auto;
+
+  @include breakpoint(mobile) {
+    margin-left: 0;
+  }
 }
