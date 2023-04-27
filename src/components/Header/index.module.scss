@@ -1,27 +1,29 @@
 @use "../../scss/style.scss" as *;
 
-.header {
-  background-color: $black;
-  padding: 0 40px;
-
-  @include breakpoint(tablet) {
-    padding: 0 24px;
-    position: relative;
-  }
-}
-
-.header__backdrop {
+.backdrop {
   display: none;
 
   @include breakpoint(tablet) {
     display: block;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.373);
-    z-index: -1;
+    z-index: 9;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+  }
+}
+
+.header {
+  background-color: $black;
+  padding: 0 40px;
+  right: 0;
+  z-index: 999;
+  position: relative;
+
+  @include breakpoint(tablet) {
+    padding: 0 24px;
   }
 }
 
@@ -54,14 +56,14 @@
 .nav {
   @include breakpoint(tablet) {
     position: absolute;
-    z-index: -1;
+    z-index: 99;
     top: -100vh;
     left: 0;
     right: 0;
-    min-height: 340px;
     border-radius: 0 0 7px 7px;
     background-color: $white;
     transition: top 500ms ease-in-out;
+    padding: 56px 40px 67px;
   }
 }
 
@@ -72,6 +74,14 @@
 .nav__list {
   @include breakpoint(tablet) {
     display: none;
+  }
+}
+
+.nav__cathegories {
+  display: none;
+
+  @include breakpoint(tablet) {
+    display: block;
   }
 }
 

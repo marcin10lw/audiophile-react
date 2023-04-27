@@ -1,0 +1,5 @@
+@use "../../scss/style.scss" as *;
+
+.container {
+  @include container();
+}

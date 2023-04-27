@@ -1,9 +1,14 @@
-
+import CathegoryLinks from "../../components/CathegoryLinks";
+import Container from "../../components/Container";
 
 const HomePage = () => {
   return (
-    <div></div>
-  )
-}
+    <main>
+      <Container>
+        <CathegoryLinks />
+      </Container>
+    </main>
+  );
+};
 
-export default HomePage
+export default HomePage;
