@@ -50,7 +50,7 @@
 }
 
 .heroArticle {
-  max-width: 398px;
+  max-width: 395px;
   color: $white;
 
   @include breakpoint(tablet) {
@@ -93,6 +93,7 @@
   opacity: 0.75;
 }
 
-.heroArticle__button {
+.heroArticle__link {
+  display: inline-block;
   @include buttonOrange();
 }
