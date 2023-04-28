@@ -1,8 +1,19 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts, selectProducts } from "./productsSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const products = useSelector(selectProducts);
+  console.log(products);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
   return (
     <>
       <Header />
