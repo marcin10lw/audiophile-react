@@ -1,8 +1,14 @@
 import { PropsWithChildren } from "react";
 import styles from "./index.module.scss";
 
-const Container = ({ children }: PropsWithChildren) => {
-  return <div className={styles.container}>{children}</div>;
+type ContainerProps = PropsWithChildren<{ wide?: boolean }>;
+
+const Container = ({ children, wide }: ContainerProps) => {
+  return (
+    <div className={wide ? styles["container--wide"] : styles.container}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;
