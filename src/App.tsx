@@ -8,7 +8,6 @@ import { fetchProducts, selectProducts } from "./productsSlice";
 function App() {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
-  console.log(products);
 
   useEffect(() => {
     dispatch(fetchProducts());

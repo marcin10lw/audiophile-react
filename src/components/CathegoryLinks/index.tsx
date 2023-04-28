@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 const CathegoryLinks = () => {
   return (
     <div className={styles.cathegories}>
-      <Link className={styles.cathegory} to="headphones">
+      <Link className={styles.cathegory} to="/headphones">
         <article className={styles.cathegory__article}>
           <img
             className={styles.cathegory__image}
@@ -21,7 +21,7 @@ const CathegoryLinks = () => {
           </div>
         </article>
       </Link>
-      <Link className={styles.cathegory} to="speakers">
+      <Link className={styles.cathegory} to="/speakers">
         <article className={styles.cathegory__article}>
           <img
             className={styles.cathegory__image}
@@ -37,7 +37,7 @@ const CathegoryLinks = () => {
           </div>
         </article>
       </Link>
-      <Link className={styles.cathegory} to="earphones">
+      <Link className={styles.cathegory} to="/earphones">
         <article className={styles.cathegory__article}>
           <img
             className={styles.cathegory__image}
