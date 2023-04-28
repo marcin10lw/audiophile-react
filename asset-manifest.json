@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/audiophile-react/static/css/main.5b5d0610.css",
-    "main.js": "/audiophile-react/static/js/main.153de615.js",
+    "main.css": "/audiophile-react/static/css/main.9cecf2f6.css",
+    "main.js": "/audiophile-react/static/js/main.e14dfd60.js",
+    "static/media/hero-desktop.jpg": "/audiophile-react/static/media/hero-desktop.fb7f46173fa4c819c755.jpg",
+    "static/media/hero-tablet.jpg": "/audiophile-react/static/media/hero-tablet.13f7f18f9ae7b105ca12.jpg",
+    "static/media/hero-mobile.jpg": "/audiophile-react/static/media/hero-mobile.d200a3583e72c7981f46.jpg",
     "static/media/logo.svg": "/audiophile-react/static/media/logo.21734ed9fda762f7332bdc7de66e7e3f.svg",
     "index.html": "/audiophile-react/index.html",
     "static/media/icon-cart.svg": "/audiophile-react/static/media/icon-cart.a5a35910d1d6e3ae5b69411f8a4a3226.svg",
     "static/media/icon-arrow-right.svg": "/audiophile-react/static/media/icon-arrow-right.357b9db81a798d76397efa2f4ad3409f.svg",
     "static/media/icon-hamburger.svg": "/audiophile-react/static/media/icon-hamburger.f8a9f0cf12d419a7d18556f98d81a47e.svg",
-    "main.5b5d0610.css.map": "/audiophile-react/static/css/main.5b5d0610.css.map",
-    "main.153de615.js.map": "/audiophile-react/static/js/main.153de615.js.map"
+    "main.9cecf2f6.css.map": "/audiophile-react/static/css/main.9cecf2f6.css.map",
+    "main.e14dfd60.js.map": "/audiophile-react/static/js/main.e14dfd60.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b5d0610.css",
-    "static/js/main.153de615.js"
+    "static/css/main.9cecf2f6.css",
+    "static/js/main.e14dfd60.js"
   ]
 }
