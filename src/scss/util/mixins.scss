@@ -1,3 +1,5 @@
+@use "../globals/colors.scss" as *;
+
 @mixin container() {
   max-width: 1110px;
   width: 100%;
@@ -12,4 +14,19 @@
 
 @mixin hoverTransition($property) {
   transition: $property 200ms ease-in-out;
+}
+
+@mixin buttonOrange() {
+  border: none;
+  font-size: 13px;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+  background-color: $orange;
+  color: white;
+  cursor: pointer;
+  @include hoverTransition(background-color);
+
+  &:hover {
+    background-color: $lightOrange;
+  }
 }
