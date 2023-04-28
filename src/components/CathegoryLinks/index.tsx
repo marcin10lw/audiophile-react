@@ -14,9 +14,9 @@ const CathegoryLinks = () => {
           />
           <div className={styles.cathegory__info}>
             <h2 className={styles.cathegory__name}>HEADPHONES</h2>
-            <div className={styles.cathegory__redirect}>
+            <div className={styles.redirect}>
               <span>SHOP</span>
-              <Arrow />
+              <Arrow className={styles.redirect__icon} />
             </div>
           </div>
         </article>
@@ -30,9 +30,9 @@ const CathegoryLinks = () => {
           />
           <div className={styles.cathegory__info}>
             <h2 className={styles.cathegory__name}>SPEAKERS</h2>
-            <div className={styles.cathegory__redirect}>
+            <div className={styles.redirect}>
               <span>SHOP</span>
-              <Arrow />
+              <Arrow className={styles.redirect__icon} />
             </div>
           </div>
         </article>
@@ -46,9 +46,9 @@ const CathegoryLinks = () => {
           />
           <div className={styles.cathegory__info}>
             <h2 className={styles.cathegory__name}>EARPHONES</h2>
-            <div className={styles.cathegory__redirect}>
+            <div className={styles.redirect}>
               <span>SHOP</span>
-              <Arrow />
+              <Arrow className={styles.redirect__icon} />
             </div>
           </div>
         </article>

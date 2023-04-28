@@ -1,3 +1,4 @@
+import CathegoryLinks from "../../components/CathegoryLinks";
 import Container from "../../components/Container";
 import HomeHero from "./HomeHero";
 
@@ -6,7 +7,9 @@ const HomePage = () => {
     <main>
       <HomeHero />
       <Container wide={true}>
-        <Container></Container>
+        <Container>
+          <CathegoryLinks />
+        </Container>
       </Container>
     </main>
   );

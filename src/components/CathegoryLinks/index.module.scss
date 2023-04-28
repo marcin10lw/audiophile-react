@@ -11,13 +11,18 @@
   }
 
   @include breakpoint(mobile) {
-    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-template-columns: minmax(0, 360px);
     gap: 70px;
   }
 }
 
 .cathegory {
   padding-top: 70px;
+
+  &:hover .redirect__icon {
+    transform: translateX(5px);
+  }
 }
 
 .cathegory__article {
@@ -29,7 +34,6 @@
 .cathegory__info {
   padding: 88px 0 22px;
   border-radius: 8px;
-  // background-color: grey;
   background-color: $seaShell;
 }
 
@@ -46,7 +50,7 @@
   }
 }
 
-.cathegory__redirect {
+.redirect {
   font-weight: 700px;
   font-size: 13px;
   letter-spacing: 1px;
@@ -55,10 +59,11 @@
   span {
     opacity: 0.5;
   }
+}
 
-  svg {
-    margin-left: 13px;
-  }
+.redirect__icon {
+  margin-left: 13px;
+  @include hoverTransition(transform);
 }
 
 .cathegory__image {

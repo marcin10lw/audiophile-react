@@ -2,6 +2,7 @@
 
 .heroSection {
   padding: 0 40px;
+  margin-bottom: 96px;
   background-color: $codGray;
   position: relative;
   z-index: 1;
@@ -30,7 +31,7 @@
     content: "";
     display: block;
     position: absolute;
-    width: 105%;
+    width: 100%;
     height: 117%;
     top: -17%;
     z-index: -1;
