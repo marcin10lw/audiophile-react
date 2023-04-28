@@ -27,6 +27,10 @@
   }
 }
 
+.header--home {
+  background-color: $codGray
+}
+
 .header__wrapper {
   @include container();
   @include flexCenterAlign(row);
@@ -57,7 +61,7 @@
   @include breakpoint(tablet) {
     position: absolute;
     z-index: 99;
-    top: -100vh;
+    top: -300vh;
     left: 0;
     right: 0;
     border-radius: 0 0 7px 7px;

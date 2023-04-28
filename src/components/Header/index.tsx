@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigationList from "../NavigationList";
 import styles from "./index.module.scss";
@@ -10,6 +10,7 @@ import CathegoryLinks from "../CathegoryLinks";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -28,7 +29,11 @@ const Header = () => {
           />
         )}
       </AnimatePresence>
-      <header className={styles.header}>
+      <header
+        className={`${styles.header} ${
+          pathname === "/home" ? styles["header--home"] : ""
+        }`}
+      >
         <div className={styles.header__wrapper}>
           <button
             className={`${styles.header__button} ${styles["header__button--hamburger"]}`}
