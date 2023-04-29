@@ -9,14 +9,12 @@ import { useState } from "react";
 import CathegoryLinks from "../CathegoryLinks";
 import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
+import { useMediaQuery } from "@material-ui/core";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const matches = useMediaQuery("(max-width: 940px");
 
   return (
     <>
@@ -41,7 +39,7 @@ const Header = () => {
           <nav
             className={styles.nav}
             style={{
-              pointerEvents: isMenuOpen ? "auto" : "none",
+              pointerEvents: isMenuOpen ? "auto" : matches ? "none" : "auto",
             }}
           >
             <div className={styles.nav__list}>
