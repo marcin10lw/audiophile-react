@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import NavigationList from "../NavigationList";
 import styles from "./index.module.scss";
 import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
@@ -9,11 +9,9 @@ import { useState } from "react";
 import CathegoryLinks from "../CathegoryLinks";
 import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
-import { useMediaQuery } from "@material-ui/core";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const matches = useMediaQuery("max-width: 940px");
   const { pathname } = useLocation();
 
   const closeMenu = () => {
@@ -50,19 +48,17 @@ const Header = () => {
               <NavigationList />
             </div>
 
-            {!matches && (
-              <motion.div
-                initial={false}
-                variants={menuVariants}
-                style={{
-                  pointerEvents: isMenuOpen ? "auto" : "none",
-                }}
-                animate={isMenuOpen ? "open" : "closed"}
-                className={styles.nav__cathegories}
-              >
-                <CathegoryLinks />
-              </motion.div>
-            )}
+            <motion.div
+              initial={false}
+              variants={menuVariants}
+              style={{
+                pointerEvents: isMenuOpen ? "auto" : "none",
+              }}
+              animate={isMenuOpen ? "open" : "closed"}
+              className={styles.nav__cathegories}
+            >
+              <CathegoryLinks />
+            </motion.div>
           </nav>
 
           <button
