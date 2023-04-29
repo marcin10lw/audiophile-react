@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/audiophile-react/static/css/main.9cecf2f6.css",
-    "main.js": "/audiophile-react/static/js/main.d832eeba.js",
+    "main.css": "/audiophile-react/static/css/main.91d2bc4d.css",
+    "main.js": "/audiophile-react/static/js/main.f07b48b4.js",
     "static/media/hero-desktop.jpg": "/audiophile-react/static/media/hero-desktop.fb7f46173fa4c819c755.jpg",
     "static/media/hero-tablet.jpg": "/audiophile-react/static/media/hero-tablet.13f7f18f9ae7b105ca12.jpg",
     "static/media/hero-mobile.jpg": "/audiophile-react/static/media/hero-mobile.d200a3583e72c7981f46.jpg",
@@ -10,11 +10,11 @@
     "static/media/icon-cart.svg": "/audiophile-react/static/media/icon-cart.a5a35910d1d6e3ae5b69411f8a4a3226.svg",
     "static/media/icon-arrow-right.svg": "/audiophile-react/static/media/icon-arrow-right.357b9db81a798d76397efa2f4ad3409f.svg",
     "static/media/icon-hamburger.svg": "/audiophile-react/static/media/icon-hamburger.f8a9f0cf12d419a7d18556f98d81a47e.svg",
-    "main.9cecf2f6.css.map": "/audiophile-react/static/css/main.9cecf2f6.css.map",
-    "main.d832eeba.js.map": "/audiophile-react/static/js/main.d832eeba.js.map"
+    "main.91d2bc4d.css.map": "/audiophile-react/static/css/main.91d2bc4d.css.map",
+    "main.f07b48b4.js.map": "/audiophile-react/static/js/main.f07b48b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cecf2f6.css",
-    "static/js/main.d832eeba.js"
+    "static/css/main.91d2bc4d.css",
+    "static/js/main.f07b48b4.js"
   ]
 }
