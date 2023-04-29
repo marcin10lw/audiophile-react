@@ -2,14 +2,18 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigationList from "../NavigationList";
 import styles from "./index.module.scss";
-import { ReactComponent as CartIcon } from "./icon-cart.svg";
-import { ReactComponent as Logo } from "./logo.svg";
-import { ReactComponent as Hamburger } from "./icon-hamburger.svg";
+import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
+import { ReactComponent as Logo } from "./images/logo.svg";
+import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
 import { useState } from "react";
 import CathegoryLinks from "../CathegoryLinks";
+import { menuVariants } from "./variants";
+import Backdrop from "../Backdrop";
+import { useMediaQuery } from "@material-ui/core";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const matches = useMediaQuery("max-width: 940px");
   const { pathname } = useLocation();
 
   const closeMenu = () => {
@@ -18,17 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className={styles.backdrop}
-            onClick={closeMenu}
-          />
-        )}
-      </AnimatePresence>
+      <Backdrop onClick={() => setIsMenuOpen(false)} isMenuOpen={isMenuOpen} />
       <header
         className={`${styles.header} ${
           pathname === "/home" ? styles["header--home"] : ""
@@ -41,20 +35,36 @@ const Header = () => {
           >
             <Hamburger />
           </button>
+
           <Link to="home" className={styles.header__logo}>
             <Logo />
           </Link>
+
           <nav
-            className={`${styles.nav} ${isMenuOpen ? styles["nav--open"] : ""}`}
+            className={styles.nav}
+            style={{
+              pointerEvents: isMenuOpen ? "auto" : "none",
+            }}
           >
             <div className={styles.nav__list}>
               <NavigationList />
             </div>
 
-            <div className={styles.nav__cathegories}>
-              <CathegoryLinks />
-            </div>
+            {!matches && (
+              <motion.div
+                initial={false}
+                variants={menuVariants}
+                style={{
+                  pointerEvents: isMenuOpen ? "auto" : "none",
+                }}
+                animate={isMenuOpen ? "open" : "closed"}
+                className={styles.nav__cathegories}
+              >
+                <CathegoryLinks />
+              </motion.div>
+            )}
           </nav>
+
           <button
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
           >

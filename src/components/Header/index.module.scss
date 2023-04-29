@@ -1,20 +1,5 @@
 @use "../../scss/style.scss" as *;
 
-.backdrop {
-  display: none;
-
-  @include breakpoint(tablet) {
-    display: block;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.373);
-    z-index: 9;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
 .header {
   background-color: $black;
   padding: 0 40px;
@@ -28,7 +13,7 @@
 }
 
 .header--home {
-  background-color: $codGray
+  background-color: $codGray;
 }
 
 .header__wrapper {
@@ -61,18 +46,10 @@
   @include breakpoint(tablet) {
     position: absolute;
     z-index: 99;
-    top: -300vh;
+    top: 100%;
     left: 0;
     right: 0;
-    border-radius: 0 0 7px 7px;
-    background-color: $white;
-    transition: top 500ms ease-in-out;
-    padding: 56px 40px 67px;
   }
-}
-
-.nav--open {
-  top: 100%;
 }
 
 .nav__list {
@@ -86,6 +63,9 @@
 
   @include breakpoint(tablet) {
     display: block;
+    border-radius: 0 0 7px 7px;
+    background-color: $white;
+    padding: 56px 40px 67px;
   }
 }
 
