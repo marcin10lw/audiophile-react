@@ -10,24 +10,62 @@
   color: $white;
   border-radius: 8px;
   margin-bottom: 200px;
-  background-color: $orange;
-  background-image: url("./images/desktop/pattern-circles.svg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: -147px -35px;
+  background: $orange url("./images/desktop/pattern-circles.svg") no-repeat -154px -40px;
   overflow: hidden;
+
+  @include breakpoint(tabletLarge) {
+    padding: 52px 24px 64px;
+    background: $orange url("./images/desktop/pattern-circles.svg") no-repeat
+      50% 95%;
+  }
+
+  @include breakpoint(mobile) {
+    background-position: 50% -145px;
+    background-size: cover;
+  }
+}
+
+.zx9Article__flex {
+  @include breakpoint(tabletLarge) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+
+  @include breakpoint(tabletLarge) {
+    gap: 32px;
+  }
 }
 
 .zx9Article__image {
   position: absolute;
   max-width: 380px;
+  width: 100%;
+  object-fit: contain;
   bottom: -12px;
-  left: 137px;
+  font-size: 4.6875rem;
+  left: clamp(4.6875rem, -29.0625rem + 50vw, 8.125rem);
+  width: 100%;
+
+  @include breakpoint(tabletLarge) {
+    position: static;
+    max-width: 190px;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 160px;
+  }
 }
 
 .infoWrapper {
   max-width: 350px;
   margin-left: auto;
+
+  @include breakpoint(tabletLarge) {
+    margin-left: 0;
+    text-align: center;
+  }
 }
 
 .zx9Article__name {
@@ -36,6 +74,13 @@
   letter-spacing: 2px;
   font-weight: 700;
   margin-bottom: 24px;
+
+  @include breakpoint(mobile) {
+    font-size: 32px;
+    line-height: 40px;
+    max-width: 230px;
+    margin-inline: auto;
+  }
 }
 
 .zx9Article__description {

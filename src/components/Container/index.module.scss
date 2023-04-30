@@ -6,4 +6,8 @@
 
 .container--wide {
   padding: 0 40px;
+
+  @include breakpoint(tablet) {
+    padding: 0 24px;
+  }
 }
