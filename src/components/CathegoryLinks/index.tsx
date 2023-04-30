@@ -11,6 +11,7 @@ const CathegoryLinks = () => {
             className={styles.cathegory__image}
             src={`${process.env.PUBLIC_URL}/assets/shared/desktop/image-category-thumbnail-headphones.png`}
             alt="go to headphones"
+            draggable={false}
           />
           <div className={styles.cathegory__info}>
             <h2 className={styles.cathegory__name}>HEADPHONES</h2>
@@ -27,6 +28,7 @@ const CathegoryLinks = () => {
             className={styles.cathegory__image}
             src={`${process.env.PUBLIC_URL}/assets/shared/desktop/image-category-thumbnail-speakers.png`}
             alt="go to speakers"
+            draggable={false}
           />
           <div className={styles.cathegory__info}>
             <h2 className={styles.cathegory__name}>SPEAKERS</h2>
@@ -43,6 +45,7 @@ const CathegoryLinks = () => {
             className={styles.cathegory__image}
             src={`${process.env.PUBLIC_URL}/assets/shared/desktop/image-category-thumbnail-earphones.png`}
             alt="go to earphones"
+            draggable={false}
           />
           <div className={styles.cathegory__info}>
             <h2 className={styles.cathegory__name}>EARPHONES</h2>

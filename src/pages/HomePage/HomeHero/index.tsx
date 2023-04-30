@@ -32,9 +32,9 @@ const HomeHero = () => {
           >
             <div className={styles.heroArticle__info}>NEW PRODUCT</div>
 
-            <h2 className={styles.heroArticle__name}>
+            <h1 className={styles.heroArticle__name}>
               XX99 MARK II HEADPHONES
-            </h2>
+            </h1>
             <p className={styles.heroArticle__description}>
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.

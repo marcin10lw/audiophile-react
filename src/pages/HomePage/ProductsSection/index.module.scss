@@ -1,0 +1,52 @@
+@use "../../../scss/style.scss" as *;
+
+.productsSection {
+  margin-top: 168px;
+}
+
+.zx9Article {
+  position: relative;
+  padding: 133px 95px 124px 0;
+  color: $white;
+  border-radius: 8px;
+  margin-bottom: 200px;
+  background-color: $orange;
+  background-image: url("./images/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -147px -35px;
+  overflow: hidden;
+}
+
+.zx9Article__image {
+  position: absolute;
+  max-width: 380px;
+  bottom: -12px;
+  left: 137px;
+}
+
+.infoWrapper {
+  max-width: 350px;
+  margin-left: auto;
+}
+
+.zx9Article__name {
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.zx9Article__description {
+  opacity: 0.75;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 40px;
+}
+
+.link {
+  display: inline-block;
+  @include buttonBlack();
+}

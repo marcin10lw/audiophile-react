@@ -13,7 +13,7 @@
   @include breakpoint(mobile) {
     justify-content: center;
     grid-template-columns: minmax(0, 360px);
-    gap: 70px;
+    gap: 30px;
   }
 }
 
@@ -72,5 +72,5 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 35%;
+  bottom: 34%;
 }

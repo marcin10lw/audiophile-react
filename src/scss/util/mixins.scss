@@ -19,14 +19,40 @@
 @mixin buttonOrange() {
   border: none;
   font-size: 13px;
+  font-weight: 700;
   padding: 15px 30px;
   letter-spacing: 1px;
   background-color: $orange;
   color: white;
   cursor: pointer;
-  @include hoverTransition(background-color);
+  transition: background-color 200ms ease-in-out;
 
   &:hover {
     background-color: $lightOrange;
+  }
+}
+
+@mixin buttonTransparent() {
+  @include buttonOrange;
+  border: 1px solid $black;
+  background-color: transparent;
+  color: $black;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+@mixin buttonBlack {
+  @include buttonTransparent;
+  background-color: $black;
+  color: $white;
+  transition: border-color 200ms ease-in-out, background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: $tundora;
+    border-color: $tundora;
   }
 }
