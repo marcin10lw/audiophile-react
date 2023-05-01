@@ -45,7 +45,6 @@
 .nav {
   @include breakpoint(tablet) {
     position: absolute;
-    z-index: 99;
     top: 100%;
     left: 0;
     right: 0;

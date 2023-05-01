@@ -7,7 +7,6 @@ import { selectProducts } from "../../productsSlice";
 
 const HomePage = () => {
   const products = useSelector(selectProducts);
-  console.log(products);
 
   return (
     <main>
