@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/audiophile-react/static/css/main.91d2bc4d.css",
-    "main.js": "/audiophile-react/static/js/main.0d4408cb.js",
+    "main.css": "/audiophile-react/static/css/main.70a0a960.css",
+    "main.js": "/audiophile-react/static/js/main.6a3d213f.js",
+    "static/media/image-speaker-zx9.png": "/audiophile-react/static/media/image-speaker-zx9.153cd899b91a08b22b1a.png",
     "static/media/hero-desktop.jpg": "/audiophile-react/static/media/hero-desktop.fb7f46173fa4c819c755.jpg",
     "static/media/hero-tablet.jpg": "/audiophile-react/static/media/hero-tablet.13f7f18f9ae7b105ca12.jpg",
     "static/media/hero-mobile.jpg": "/audiophile-react/static/media/hero-mobile.d200a3583e72c7981f46.jpg",
+    "static/media/image-speaker-zx7.jpg": "/audiophile-react/static/media/image-speaker-zx7.173a4cb5c7acfc7f300c.jpg",
+    "static/media/image-earphones-yx1.jpg": "/audiophile-react/static/media/image-earphones-yx1.48e16a44bd58ed3be41e.jpg",
     "static/media/logo.svg": "/audiophile-react/static/media/logo.21734ed9fda762f7332bdc7de66e7e3f.svg",
     "index.html": "/audiophile-react/index.html",
     "static/media/icon-cart.svg": "/audiophile-react/static/media/icon-cart.a5a35910d1d6e3ae5b69411f8a4a3226.svg",
+    "static/media/pattern-circles.svg": "/audiophile-react/static/media/pattern-circles.f4df3610b83b818abbbe.svg",
     "static/media/icon-arrow-right.svg": "/audiophile-react/static/media/icon-arrow-right.357b9db81a798d76397efa2f4ad3409f.svg",
     "static/media/icon-hamburger.svg": "/audiophile-react/static/media/icon-hamburger.f8a9f0cf12d419a7d18556f98d81a47e.svg",
-    "main.91d2bc4d.css.map": "/audiophile-react/static/css/main.91d2bc4d.css.map",
-    "main.0d4408cb.js.map": "/audiophile-react/static/js/main.0d4408cb.js.map"
+    "main.70a0a960.css.map": "/audiophile-react/static/css/main.70a0a960.css.map",
+    "main.6a3d213f.js.map": "/audiophile-react/static/js/main.6a3d213f.js.map"
   },
   "entrypoints": [
-    "static/css/main.91d2bc4d.css",
-    "static/js/main.0d4408cb.js"
+    "static/css/main.70a0a960.css",
+    "static/js/main.6a3d213f.js"
   ]
 }
