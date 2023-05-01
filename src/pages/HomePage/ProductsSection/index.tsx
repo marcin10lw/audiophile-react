@@ -24,6 +24,15 @@ const ProductsSection = () => {
           </div>
         </div>
       </article>
+      <article className={styles.zx7Article}>
+        <h2 className={styles.zx7Article__name}>ZX7 SPEAKER</h2>
+        <Link
+          to="/speakers/zx7-speaker"
+          className={`${styles.link} ${styles["link--transparent"]}`}
+        >
+          SEE PRODUCT
+        </Link>
+      </article>
     </section>
   );
 };

@@ -2,6 +2,9 @@
 
 .productsSection {
   margin-top: 168px;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 48px;
 }
 
 .zx9Article {
@@ -9,7 +12,6 @@
   padding: 133px 95px 124px 0;
   color: $white;
   border-radius: 8px;
-  margin-bottom: 200px;
   background: $orange url("./images/desktop/pattern-circles.svg") no-repeat -154px -40px;
   overflow: hidden;
 
@@ -94,4 +96,42 @@
 .link {
   display: inline-block;
   @include buttonBlack();
+}
+
+.zx7Article {
+  padding: 100px 0 100px 95px;
+  border-radius: 8px;
+  background: center / cover no-repeat
+    url("./images/desktop/image-speaker-zx7.jpg");
+  margin-bottom: 200px;
+
+  @include breakpoint(tabletLarge) {
+    background: center / cover no-repeat
+      url("./images/tablet/image-speaker-zx7.jpg");
+  }
+
+  @include breakpoint(mobileSmall) {
+    background: center / cover no-repeat
+      url("./images/mobile/image-speaker-zx7.jpg");
+  }
+}
+
+.link--transparent {
+  background-color: transparent;
+  border: 1px solid $black;
+  color: black;
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+.zx7Article__name {
+  font-weight: 700px;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
 }
