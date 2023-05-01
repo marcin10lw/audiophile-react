@@ -25,13 +25,25 @@ const ProductsSection = () => {
         </div>
       </article>
       <article className={styles.zx7Article}>
-        <h2 className={styles.zx7Article__name}>ZX7 SPEAKER</h2>
+        <h2 className={styles.article__name}>ZX7 SPEAKER</h2>
         <Link
           to="/speakers/zx7-speaker"
           className={`${styles.link} ${styles["link--transparent"]}`}
         >
           SEE PRODUCT
         </Link>
+      </article>
+      <article className={styles.yx1Article}>
+        <div className={styles.yx1Article__image} />
+        <div className={styles.yx1Article__info}>
+          <h2 className={styles.article__name}>YX1 EARPHONES</h2>
+          <Link
+            to="/speakers/yx1-earphones"
+            className={`${styles.link} ${styles["link--transparent"]}`}
+          >
+            SEE PRODUCT
+          </Link>
+        </div>
       </article>
     </section>
   );

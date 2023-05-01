@@ -12,7 +12,7 @@ export const menuVariants = {
     transition: {
       type: "spring",
       bounce: 0,
-      duration: 0.3,
+      duration: 0.2,
     },
   },
 };
