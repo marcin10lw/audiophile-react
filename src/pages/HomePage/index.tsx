@@ -4,6 +4,7 @@ import Container from "../../components/Container";
 import HomeHero from "./HomeHero";
 import ProductsSection from "./ProductsSection";
 import { selectProducts } from "../../productsSlice";
+import GearSection from "./GearSection";
 
 const HomePage = () => {
   const products = useSelector(selectProducts);
@@ -17,6 +18,7 @@ const HomePage = () => {
             <CathegoryLinks />
           </nav>
           <ProductsSection />
+          <GearSection />
         </Container>
       </Container>
     </main>
