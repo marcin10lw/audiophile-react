@@ -5,6 +5,17 @@
   display: grid;
   grid-template-columns: auto;
   gap: 48px;
+  margin-bottom: 200px;
+
+  @include breakpoint(tablet) {
+    gap: 32px;
+    margin-bottom: 96px;
+  }
+
+  @include breakpoint(mobile) {
+    gap: 24px;
+    margin-bottom: 120px;
+  }
 }
 
 .zx9Article {
@@ -107,6 +118,11 @@
   @include breakpoint(tabletLarge) {
     background: center / cover no-repeat
       url("./images/tablet/image-speaker-zx7.jpg");
+    padding: 100px 62px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 100px 24px;
   }
 
   @include breakpoint(mobileSmall) {
@@ -136,7 +152,6 @@
 }
 
 .yx1Article {
-  margin-bottom: 200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -173,8 +188,12 @@
   background-color: $seaShell;
   border-radius: 8px;
 
-  @include breakpoint(tablet) {
+  @include breakpoint(tabletLarge) {
     padding: 100px 40px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 62px 24px;
   }
 
   @include breakpoint(mobileSmall) {

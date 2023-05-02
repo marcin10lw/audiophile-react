@@ -87,9 +87,7 @@
 }
 
 .heroArticle__description {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 25px;
+  @include description($white);
   margin-bottom: 40px;
   opacity: 0.75;
 }

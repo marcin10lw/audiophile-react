@@ -56,3 +56,10 @@
     border-color: $tundora;
   }
 }
+
+@mixin description($color) {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: $color;
+}
