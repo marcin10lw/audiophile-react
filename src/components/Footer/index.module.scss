@@ -2,14 +2,12 @@
 
 .footer {
   background-color: $codGray;
-  padding: 75px 40px 48px;
-
-  @include breakpoint(tablet) {
-    padding: 60px 40px 46px;
-  }
+  padding-inline: 40px;
 
   @include breakpoint(mobile) {
-    padding: 56px 24px 38px;
+    text-align: center;
+    padding-bottom: 72px;
+    padding-inline: 24px;
   }
 }
 
@@ -24,10 +22,32 @@
 
 .footerWrapper {
   position: relative;
+  padding: 75px 0 48px;
+
+  @include breakpoint(tablet) {
+    padding: 60px 0 46px;
+  }
 
   @include breakpoint(mobile) {
     text-align: center;
     padding-bottom: 72px;
+    padding: 56px 0 38px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 4px;
+    width: 100px;
+    top: 0;
+    left: 0;
+    background-color: $orange;
+
+    @include breakpoint(mobile) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 
