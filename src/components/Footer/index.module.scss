@@ -1,0 +1,109 @@
+@use "../../scss/style.scss" as *;
+
+.footer {
+  background-color: $codGray;
+  padding: 75px 40px 48px;
+
+  @include breakpoint(tablet) {
+    padding: 60px 40px 46px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 56px 24px 38px;
+  }
+}
+
+.footer__logo {
+  color: $white;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $orange;
+  }
+}
+
+.footerWrapper {
+  position: relative;
+
+  @include breakpoint(mobile) {
+    text-align: center;
+    padding-bottom: 72px;
+  }
+}
+
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint(tablet) {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  @include breakpoint(mobile) {
+    gap: 48px;
+  }
+}
+
+.footer__text {
+  @include description($white);
+  opacity: 0.5;
+  max-width: 540px;
+  margin-top: 34px;
+
+  @include breakpoint(tablet) {
+    max-width: 100%;
+    margin-top: 32px;
+  }
+
+  @include breakpoint(mobile) {
+    margin-top: 48px;
+  }
+}
+
+.footer__icons {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+
+  @include breakpoint(tablet) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include breakpoint(mobile) {
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+
+  svg {
+    display: block;
+  }
+
+  a {
+    cursor: pointer;
+    color: $white;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.footer__copyright {
+  @extend .footer__text;
+  font-weight: 700;
+  margin: 56px 0 0;
+
+  @include breakpoint(tablet) {
+    margin: 80px 0 0;
+  }
+
+  @include breakpoint(mobile) {
+    margin: 48px 0 0;
+  }
+}

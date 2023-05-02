@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, selectProducts } from "./productsSlice";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomePage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

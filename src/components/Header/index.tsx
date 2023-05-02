@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import NavigationList from "../NavigationList";
 import styles from "./index.module.scss";
 import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
-import { ReactComponent as Logo } from "./images/logo.svg";
+import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
 import { useState } from "react";
 import CathegoryLinks from "../CathegoryLinks";

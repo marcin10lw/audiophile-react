@@ -4,6 +4,11 @@
   @include flexCenterAlign(row);
   gap: 34px;
 
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
   a {
     font-weight: 700;
     font-size: 13px;
