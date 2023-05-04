@@ -1,23 +1,20 @@
-import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import CategoryLinks from "../../components/CategoryLinks";
 import Container from "../../components/Container";
-import HomeHero from "./HomeHero";
-import ProductsSection from "./ProductsSection";
-import { selectProducts } from "../../productsSlice";
 import GearSection from "../../components/GearSection";
+import CategoryHeader from "./CategoryHeader";
 
-const HomePage = () => {
-  const products = useSelector(selectProducts);
+const CategoryPage = () => {
+  const { name } = useParams();
 
   return (
     <>
-      <HomeHero />
+      <CategoryHeader name={name} />
       <Container wide={true}>
         <Container>
           <nav>
             <CategoryLinks />
           </nav>
-          <ProductsSection />
           <GearSection />
         </Container>
       </Container>
@@ -25,4 +22,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default CategoryPage;

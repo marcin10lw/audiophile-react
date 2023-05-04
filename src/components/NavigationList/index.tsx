@@ -8,13 +8,13 @@ const NavigationList = () => {
         <NavLink to="/home">HOME</NavLink>
       </li>
       <li>
-        <NavLink to="/headphones">HEADPHONES</NavLink>
+        <NavLink to="/category/headphones">HEADPHONES</NavLink>
       </li>
       <li>
-        <NavLink to="/speakers">SPEAKERS</NavLink>
+        <NavLink to="/category/speakers">SPEAKERS</NavLink>
       </li>
       <li>
-        <NavLink to="/earphones">EARPHONES</NavLink>
+        <NavLink to="/category/earphones">EARPHONES</NavLink>
       </li>
     </ul>
   );

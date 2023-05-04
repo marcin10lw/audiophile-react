@@ -6,7 +6,7 @@ import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
 import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
 import { useState } from "react";
-import CathegoryLinks from "../CathegoryLinks";
+import CategoryLinks from "../CategoryLinks";
 import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
 import { useMediaQuery } from "@material-ui/core";
@@ -55,7 +55,7 @@ const Header = () => {
               animate={isMenuOpen ? "open" : "closed"}
               className={styles.nav__cathegories}
             >
-              <CathegoryLinks />
+              <CategoryLinks />
             </motion.div>
           </nav>
 

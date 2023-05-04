@@ -4,7 +4,6 @@ import styles from "./index.module.scss";
 
 const GearSection = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
 
   return (
     <section

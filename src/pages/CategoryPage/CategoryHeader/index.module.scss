@@ -1,0 +1,11 @@
+@use "../../../scss/style.scss" as *;
+
+.header {
+  background-color: $black;
+  padding: 96px 0;
+
+  h1 {
+    text-align: center;
+    color: $white;
+  }
+}

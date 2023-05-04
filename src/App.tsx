@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, selectProducts } from "./productsSlice";
 import Footer from "./components/Footer";
-import HeadphonesPage from "./pages/HeadphonesPage";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/headphones" element={<HeadphonesPage />} />
+          <Route path="/category/:name" element={<CategoryPage />} />
         </Routes>
       </main>
       <Footer />
