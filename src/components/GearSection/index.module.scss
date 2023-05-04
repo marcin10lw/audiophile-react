@@ -1,21 +1,32 @@
-@use "../../../scss/style.scss" as *;
+@use "../../scss/style.scss" as *;
 
 .section {
   display: grid;
   grid-template-columns: minmax(0, 445px) auto;
   align-items: center;
   gap: 125px;
-  margin-bottom: 200px;
+  margin: 160px 0 160px;
 
   @include breakpoint(tablet) {
     grid-template-columns: auto;
     gap: 63px;
-    margin-bottom: 96px;
+    margin: 120px 0 120px;
   }
 
   @include breakpoint(mobile) {
     gap: 40px;
-    margin-bottom: 120px;
+  }
+}
+
+.section--home {
+  margin: 200px 0 200px;
+
+  @include breakpoint(tablet) {
+    margin: 96px 0 96px;
+  }
+
+  @include breakpoint(mobile) {
+    margin: 120px 0 120px;
   }
 }
 

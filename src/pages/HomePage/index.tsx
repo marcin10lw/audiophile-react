@@ -4,13 +4,13 @@ import Container from "../../components/Container";
 import HomeHero from "./HomeHero";
 import ProductsSection from "./ProductsSection";
 import { selectProducts } from "../../productsSlice";
-import GearSection from "./GearSection";
+import GearSection from "../../components/GearSection";
 
 const HomePage = () => {
   const products = useSelector(selectProducts);
 
   return (
-    <main>
+    <>
       <HomeHero />
       <Container wide={true}>
         <Container>
@@ -21,7 +21,7 @@ const HomePage = () => {
           <GearSection />
         </Container>
       </Container>
-    </main>
+    </>
   );
 };
 

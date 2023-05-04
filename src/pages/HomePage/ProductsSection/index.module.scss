@@ -5,16 +5,13 @@
   display: grid;
   grid-template-columns: auto;
   gap: 48px;
-  margin-bottom: 200px;
 
   @include breakpoint(tablet) {
     gap: 32px;
-    margin-bottom: 96px;
   }
 
   @include breakpoint(mobile) {
     gap: 24px;
-    margin-bottom: 120px;
   }
 }
 

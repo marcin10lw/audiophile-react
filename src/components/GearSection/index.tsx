@@ -1,9 +1,17 @@
-import AnimationWrapper from "../../../components/AnimationWrapper";
+import { useLocation } from "react-router-dom";
+import AnimationWrapper from "../AnimationWrapper";
 import styles from "./index.module.scss";
 
 const GearSection = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   return (
-    <section className={styles.section}>
+    <section
+      className={`${styles.section} ${
+        pathname === "/home" ? styles["section--home"] : ""
+      }`}
+    >
       <AnimationWrapper>
         <article className={styles.article}>
           <h2 className={styles.article__title}>
