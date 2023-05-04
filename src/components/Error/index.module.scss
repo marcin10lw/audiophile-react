@@ -1,0 +1,35 @@
+@use "../../scss/style.scss" as *;
+
+.error {
+  margin-top: 80px;
+  padding-inline: 24px;
+}
+
+.error__wrapper {
+  margin-inline: auto;
+  max-width: 400px;
+  text-align: center;
+  color: $tundora;
+}
+
+.error__icon {
+  font-size: 60px;
+}
+
+.error__message {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.error__link {
+  display: block;
+  margin-top: 20px;
+  color: $tundora;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: opacity 100ms ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

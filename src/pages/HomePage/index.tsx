@@ -6,6 +6,7 @@ import ProductsSection from "./ProductsSection";
 import { selectProducts, selectProductsStatus } from "../../productsSlice";
 import GearSection from "../../components/GearSection";
 import Loader from "../../components/Loader";
+import Error from "../../components/Error";
 
 const HomePage = () => {
   const products = useSelector(selectProducts);
@@ -28,6 +29,7 @@ const HomePage = () => {
           </Container>
         </>
       )}
+      {status === "error" && <Error />}
     </>
   );
 };
