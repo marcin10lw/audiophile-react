@@ -3,13 +3,18 @@ import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, selectProducts } from "./productsSlice";
+import {
+  fetchProducts,
+  selectProducts,
+  selectProductsStatus,
+} from "./productsSlice";
 import Footer from "./components/Footer";
 import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
+  const status = useSelector(selectProductsStatus);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -25,7 +30,7 @@ function App() {
           <Route path="/category/:name" element={<CategoryPage />} />
         </Routes>
       </main>
-      <Footer />
+      {status === "success" && <Footer />}
     </>
   );
 }
