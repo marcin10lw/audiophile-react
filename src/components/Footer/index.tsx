@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Container from "../Container";
 import styles from "./index.module.scss";
 import { ReactComponent as Logo } from "../logo.svg";
@@ -8,10 +8,15 @@ import { ReactComponent as Instagram } from "./images/icon-instagram.svg";
 import NavigationList from "../NavigationList";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={`${styles.footer} ${
+        pathname === "/home" ? styles["footer--home"] : ""
+      }`}
+    >
       <Container>
         <div className={styles.footerWrapper}>
           <div className={styles.flexWrapper}>

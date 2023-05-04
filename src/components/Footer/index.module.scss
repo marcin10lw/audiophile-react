@@ -1,7 +1,7 @@
 @use "../../scss/style.scss" as *;
 
 .footer {
-  background-color: $codGray;
+  background-color: $black;
   padding-inline: 40px;
 
   @include breakpoint(mobile) {
@@ -9,6 +9,10 @@
     padding-bottom: 72px;
     padding-inline: 24px;
   }
+}
+
+.footer--home {
+  background-color: $codGray;
 }
 
 .footer__logo {
