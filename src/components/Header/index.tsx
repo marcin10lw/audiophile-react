@@ -55,7 +55,7 @@ const Header = () => {
               animate={isMenuOpen ? "open" : "closed"}
               className={styles.nav__categories}
             >
-              <CategoryLinks />
+              <CategoryLinks onClick={() => setIsMenuOpen(false)} />
             </motion.div>
           </nav>
 

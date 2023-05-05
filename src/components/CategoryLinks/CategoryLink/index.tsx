@@ -4,12 +4,13 @@ import { ReactComponent as Arrow } from "../icon-arrow-right.svg";
 
 type CategoryLinkProps = {
   title: string;
+  onClick?: () => void;
 };
 
-const CategoryLink = ({ title }: CategoryLinkProps) => {
+const CategoryLink = ({ title, onClick }: CategoryLinkProps) => {
   return (
     <Link className={styles.category} to={`/category/${title}`}>
-      <article className={styles.category__article}>
+      <article className={styles.category__article} onClick={onClick}>
         <img
           className={styles.category__image}
           src={`${process.env.PUBLIC_URL}/assets/shared/desktop/image-category-thumbnail-${title}.png`}

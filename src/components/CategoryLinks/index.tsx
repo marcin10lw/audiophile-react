@@ -1,12 +1,16 @@
 import styles from "./index.module.scss";
 import CategoryLink from "./CategoryLink";
 
-const CategoryLinks = () => {
+type CategoryLinksProps = {
+  onClick?: () => void;
+};
+
+const CategoryLinks = ({ onClick }: CategoryLinksProps) => {
   return (
     <div className={styles.categories}>
-      <CategoryLink title="headphones" />
-      <CategoryLink title="speakers" />
-      <CategoryLink title="earphones" />
+      <CategoryLink onClick={onClick} title="headphones" />
+      <CategoryLink onClick={onClick} title="speakers" />
+      <CategoryLink onClick={onClick} title="earphones" />
     </div>
   );
 };
