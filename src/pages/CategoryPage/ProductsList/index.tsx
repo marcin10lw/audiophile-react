@@ -14,17 +14,15 @@ const ProductsList = () => {
 
   return (
     <section>
-      <ul>
-        {products.map((product) => (
-          <Product
-            key={product.id}
-            name={product.name}
-            description={product.description}
-            image={product.image.desktop}
-            id={product.slug}
-          />
-        ))}
-      </ul>
+      {products.map((product) => (
+        <Product
+          key={product.id}
+          name={product.name}
+          description={product.description}
+          image={product.image.tablet}
+          id={product.slug}
+        />
+      ))}
     </section>
   );
 };
