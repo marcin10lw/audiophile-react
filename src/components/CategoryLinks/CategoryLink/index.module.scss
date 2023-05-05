@@ -1,0 +1,59 @@
+@use "../../../scss/style.scss" as *;
+
+.category {
+  padding-top: 70px;
+
+  &:hover .redirect__icon {
+    transform: translateX(5px);
+  }
+}
+
+.category__article {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.category__info {
+  padding: 88px 0 22px;
+  border-radius: 8px;
+  background-color: $seaShell;
+}
+
+.category__name {
+  color: $black;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  margin-bottom: 15px;
+
+  @include breakpoint(tablet) {
+    font-size: 15px;
+    letter-spacing: 1.07%;
+    margin-bottom: 17px;
+  }
+}
+
+.redirect {
+  font-weight: 700px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: $black;
+
+  span {
+    opacity: 0.5;
+  }
+}
+
+.redirect__icon {
+  margin-left: 13px;
+  @include hoverTransition(transform);
+}
+
+.category__image {
+  display: block;
+  max-width: 180px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 34%;
+}

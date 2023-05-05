@@ -1,24 +1,24 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProducts,
-  selectProducts,
-  selectProductsStatus,
-} from "./productsSlice";
+import { fetchProducts, selectProductsStatus } from "./productsSlice";
 import Footer from "./components/Footer";
 import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   const dispatch = useDispatch();
-  const products = useSelector(selectProducts);
   const status = useSelector(selectProductsStatus);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>

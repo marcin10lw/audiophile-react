@@ -53,7 +53,7 @@ const Header = () => {
                 pointerEvents: isMenuOpen ? "auto" : "none",
               }}
               animate={isMenuOpen ? "open" : "closed"}
-              className={styles.nav__cathegories}
+              className={styles.nav__categories}
             >
               <CategoryLinks />
             </motion.div>
