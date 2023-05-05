@@ -8,16 +8,20 @@
     flex-direction: column;
     gap: 16px;
   }
+}
 
-  a {
-    font-weight: 700;
-    font-size: 13px;
-    color: $white;
-    letter-spacing: 2px;
-    @include hoverTransition(color);
+.navlink {
+  font-weight: 700;
+  font-size: 13px;
+  color: $white;
+  letter-spacing: 2px;
+  @include hoverTransition(color);
 
-    &:hover {
-      color: $orange;
-    }
+  &:hover {
+    color: $orange;
   }
+}
+
+.navlink--active {
+  color: $orange;
 }
