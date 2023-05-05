@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { RootState } from "../../../store";
 import Product from "../../../components/Product";
 
-const ProductsList = () => {
+const Products = () => {
   const { name } = useParams();
   const products = useSelector((state: RootState) =>
     selectProductsByCategory(state, name)
@@ -13,18 +13,19 @@ const ProductsList = () => {
   console.log(products);
 
   return (
-    <section>
+    <section className={styles.products}>
       {products.map((product) => (
         <Product
           key={product.id}
           name={product.name}
           description={product.description}
-          image={product.image.tablet}
+          image={product.categoryImage.tablet}
           id={product.slug}
+          isNew={product.new}
         />
       ))}
     </section>
   );
 };
 
-export default ProductsList;
+export default Products;

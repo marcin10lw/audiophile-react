@@ -9,6 +9,7 @@ type ProductProps = {
   description: string;
   image: string;
   id: string;
+  isNew: boolean;
 };
 
 const productVariants = {
@@ -27,7 +28,7 @@ const productVariants = {
   },
 };
 
-const Product = ({ name, description, image, id }: ProductProps) => {
+const Product = ({ name, description, image, id, isNew }: ProductProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { animation, ref } = useInViewAnimation(0.4);
 
@@ -40,14 +41,14 @@ const Product = ({ name, description, image, id }: ProductProps) => {
       className={styles.product}
     >
       <div className={styles.product__info}>
-        <div className={styles.product__status}>NEW PRODUCT</div>
+        {isNew && <div className={styles.product__status}>NEW PRODUCT</div>}
         <h2 className={styles.product__name}>{name}</h2>
         <p className={styles.product__description}>{description}</p>
         <Link to={`/products/${id}`} className={styles.product__link}>
           SEE PRODUCT
         </Link>
       </div>
-      <div>
+      <div className={styles.image__wrapper}>
         <img
           className={styles.product__image}
           draggable={false}

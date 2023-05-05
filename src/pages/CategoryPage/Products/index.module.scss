@@ -1,0 +1,9 @@
+@use "../../../scss/style.scss" as *;
+
+.products {
+  margin-top: 160px;
+
+  @include breakpoint(tablet) {
+    margin-top: 120px;
+  }
+}

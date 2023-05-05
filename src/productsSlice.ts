@@ -6,7 +6,7 @@ export type Product = {
   new: boolean;
   name: string;
   description: string;
-  image: {
+  categoryImage: {
     desktop: string;
     tablet: string;
     mobile: string;
