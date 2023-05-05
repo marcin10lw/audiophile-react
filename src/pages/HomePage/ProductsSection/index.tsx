@@ -40,8 +40,8 @@ const ProductsSection = () => {
       </article>
       <article className={styles.yx1Article}>
         <div className={styles.yx1Article__image} />
-        <AnimationWrapper>
-          <div className={styles.yx1Article__info}>
+        <div className={styles.yx1Article__info}>
+          <AnimationWrapper>
             <h2 className={styles.article__name}>YX1 EARPHONES</h2>
             <Link
               to="/products/yx1-earphones"
@@ -49,8 +49,8 @@ const ProductsSection = () => {
             >
               SEE PRODUCT
             </Link>
-          </div>
-        </AnimationWrapper>
+          </AnimationWrapper>
+        </div>
       </article>
     </section>
   );

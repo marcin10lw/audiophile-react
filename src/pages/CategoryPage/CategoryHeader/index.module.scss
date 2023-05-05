@@ -4,8 +4,20 @@
   background-color: $black;
   padding: 96px 0;
 
+  @include breakpoint(tablet) {
+    padding: 105px 0 97px;
+  }
+
   h1 {
     text-align: center;
     color: $white;
+    font-size: 40px;
+    letter-spacing: 1.43px;
+    font-weight: 700;
+
+    @include breakpoint(mobile) {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
   }
 }
