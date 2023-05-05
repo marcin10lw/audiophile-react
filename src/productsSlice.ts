@@ -12,6 +12,7 @@ export type Product = {
     mobile: string;
   };
   slug: string;
+  category: string;
 };
 
 const productsSlice = createSlice({
@@ -49,6 +50,14 @@ export const selectProductsByName = (
   const products = selectProducts(state);
   const index = products.findIndex((product) => product.slug === name);
   return products[index];
+};
+
+export const selectProductsByCategory = (
+  state: RootState,
+  category: string | undefined
+) => {
+  const products = selectProducts(state);
+  return products.filter((product) => product.category === category);
 };
 
 export const selectProductsStatus = (state: RootState) =>

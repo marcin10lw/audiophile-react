@@ -1,0 +1,66 @@
+@use "../../scss/style.scss" as *;
+
+.product__image {
+  max-width: 540px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.image__placeholder {
+  max-width: 540px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: $seaShell;
+  border-radius: 8px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: auto minmax(0, 540px);
+  align-items: center;
+  gap: 125px;
+  margin-bottom: 160px;
+
+  &:nth-child(odd) {
+    grid-template-columns: minmax(0, 540px) auto;
+
+    img {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .image__placeholder {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+}
+
+.product__info {
+  max-width: 445px;
+}
+
+.product__status {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 10px;
+  color: $orange;
+  margin-bottom: 16px;
+}
+
+.product__name {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.43px;
+  color: $black;
+  margin-bottom: 32px;
+}
+
+.product__description {
+  @include description($black);
+  opacity: 0.5;
+  margin-bottom: 40px;
+}
+
+.product__link {
+  @include buttonOrange;
+}

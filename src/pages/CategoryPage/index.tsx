@@ -6,6 +6,7 @@ import CategoryHeader from "./CategoryHeader";
 import { useSelector } from "react-redux";
 import { selectProductsStatus } from "../../productsSlice";
 import Loader from "../../components/Loader";
+import ProductsList from "./ProductsList";
 
 const CategoryPage = () => {
   const { name } = useParams();
@@ -19,6 +20,7 @@ const CategoryPage = () => {
           <CategoryHeader name={name} />
           <Container wide={true}>
             <Container>
+              <ProductsList />
               <nav>
                 <CategoryLinks />
               </nav>
