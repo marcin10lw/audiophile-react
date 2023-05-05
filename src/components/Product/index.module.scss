@@ -19,6 +19,10 @@
     gap: 52px;
     margin-bottom: 120px;
   }
+
+  @include breakpoint(mobile) {
+    gap: 32px;
+  }
 }
 
 .product__status {
@@ -27,6 +31,10 @@
   letter-spacing: 10px;
   color: $orange;
   margin-bottom: 16px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 24px;
+  }
 }
 
 .product__name {
@@ -41,6 +49,14 @@
     max-width: 445px;
     margin-inline: auto;
   }
+
+  @include breakpoint(mobile) {
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    max-width: 250px;
+  }
 }
 
 .product__description {
@@ -52,6 +68,10 @@
   @include breakpoint(tablet) {
     margin-bottom: 24px;
     max-width: 572px;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 445px;
   }
 }
 
