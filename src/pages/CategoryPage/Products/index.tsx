@@ -20,7 +20,7 @@ const Products = () => {
             key={product.id}
             name={product.name}
             description={product.description}
-            image={product.categoryImage.tablet}
+            image={product.categoryImage}
             slug={product.slug}
             isNew={product.new}
           />

@@ -25,9 +25,10 @@ const ProductPage = () => {
               key={product.id}
               name={product.name}
               description={product.description}
-              image={product.categoryImage.tablet}
+              image={product.image}
               slug={product.slug}
               isNew={product.new}
+              location="productPage"
             />
             <ProductInfo
               features={product.features}
