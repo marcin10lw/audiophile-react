@@ -19,21 +19,21 @@ const Product = ({ name, description, image, slug, isNew }: ProductProps) => {
   const { animation, ref } = useInViewAnimation(0.4);
 
   return (
-    <motion.article
+    <motion.section
       ref={ref}
       variants={productVariants}
       initial="hidden"
       animate={animation}
       className={styles.product}
     >
-      <div className={styles.product__info}>
+      <article className={styles.product__info}>
         {isNew && <div className={styles.product__status}>NEW PRODUCT</div>}
         <h2 className={styles.product__name}>{name}</h2>
         <p className={styles.product__description}>{description}</p>
-        <Link to={`/products/${slug}`} className={styles.product__link}>
+        <Link to={`/product/${slug}`} className={styles.product__link}>
           SEE PRODUCT
         </Link>
-      </div>
+      </article>
       <div className={styles.image__wrapper}>
         <img
           className={styles.product__image}
@@ -44,7 +44,7 @@ const Product = ({ name, description, image, slug, isNew }: ProductProps) => {
         />
       </div>
       {!imageLoaded && <div className={styles.image__placeholder} />}
-    </motion.article>
+    </motion.section>
   );
 };
 

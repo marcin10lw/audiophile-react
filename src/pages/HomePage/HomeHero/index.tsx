@@ -40,7 +40,7 @@ const HomeHero = () => {
               made for the passionate music enthusiast.
             </p>
             <Link
-              to="/headphones/xx99-mark-two-headphones"
+              to="/product/xx99-mark-two-headphones"
               className={styles.heroArticle__link}
             >
               SEE PRODUCT

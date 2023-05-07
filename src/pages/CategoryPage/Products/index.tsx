@@ -4,27 +4,13 @@ import Product from "../../../components/Product";
 import { getProducts } from "../../../getProducts";
 import { useQuery } from "@tanstack/react-query";
 
-type ProductType = {
-  id: number;
-  new: boolean;
-  name: string;
-  description: string;
-  categoryImage: {
-    desktop: string;
-    tablet: string;
-    mobile: string;
-  };
-  slug: string;
-  category: string;
-};
-
 const Products = () => {
   const { name } = useParams();
-  const { data: products } = useQuery<ProductType[]>(["products"], getProducts);
+  const { data: products } = useQuery(["products"], getProducts);
 
-  const productsByCategory = products?.filter(
-    (product) => product.category === name
-  );
+  const productsByCategory = products
+    ?.filter((product) => product.category === name)
+    .reverse();
 
   return (
     <section className={styles.products}>

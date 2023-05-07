@@ -20,7 +20,7 @@ const ProductsSection = () => {
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
-              <Link to="/products/zx9-speaker" className={styles.link}>
+              <Link to="/product/zx9-speaker" className={styles.link}>
                 SEE PRODUCT
               </Link>
             </div>
@@ -31,7 +31,7 @@ const ProductsSection = () => {
         <AnimationWrapper>
           <h2 className={styles.article__name}>ZX7 SPEAKER</h2>
           <Link
-            to="/products/zx7-speaker"
+            to="/product/zx7-speaker"
             className={`${styles.link} ${styles["link--transparent"]}`}
           >
             SEE PRODUCT
@@ -44,7 +44,7 @@ const ProductsSection = () => {
           <AnimationWrapper>
             <h2 className={styles.article__name}>YX1 EARPHONES</h2>
             <Link
-              to="/products/yx1-earphones"
+              to="/product/yx1-earphones"
               className={`${styles.link} ${styles["link--transparent"]}`}
             >
               SEE PRODUCT
