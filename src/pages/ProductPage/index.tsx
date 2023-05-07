@@ -12,7 +12,6 @@ const ProductPage = () => {
   const { status, data } = useQuery(["products"], getProducts);
   const { name } = useParams();
   const product = data?.find((product) => product.slug === name);
-  console.log(product);
 
   if (status === "loading") return <Loader />;
 
