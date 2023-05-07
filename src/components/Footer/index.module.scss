@@ -6,7 +6,6 @@
 
   @include breakpoint(mobile) {
     text-align: center;
-    padding-bottom: 72px;
     padding-inline: 24px;
   }
 }
@@ -34,8 +33,7 @@
 
   @include breakpoint(mobile) {
     text-align: center;
-    padding-bottom: 72px;
-    padding: 56px 0 38px;
+    padding: 56px 0 110px;
   }
 
   &::before {
@@ -92,13 +90,14 @@
 
   @include breakpoint(tablet) {
     position: absolute;
+    z-index: 9;
     right: 0;
-    bottom: 0;
+    bottom: 60px;
   }
 
   @include breakpoint(mobile) {
     left: 50%;
-    bottom: 0;
+    bottom: 38px;
     transform: translateX(-50%);
     justify-content: center;
   }

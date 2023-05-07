@@ -3,33 +3,19 @@ import styles from "./index.module.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useInViewAnimation from "../../useInViewAnimation";
+import { productVariants } from "./productVariants";
 
 type ProductProps = {
   name: string;
   description: string;
   image: string;
-  id: string;
+  slug: string;
   isNew: boolean;
 };
 
-const productVariants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.2,
-      duration: 0.8,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const Product = ({ name, description, image, id, isNew }: ProductProps) => {
+const Product = ({ name, description, image, slug, isNew }: ProductProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [productAmount, setProductAmount] = useState(0);
   const { animation, ref } = useInViewAnimation(0.4);
 
   return (
@@ -44,7 +30,7 @@ const Product = ({ name, description, image, id, isNew }: ProductProps) => {
         {isNew && <div className={styles.product__status}>NEW PRODUCT</div>}
         <h2 className={styles.product__name}>{name}</h2>
         <p className={styles.product__description}>{description}</p>
-        <Link to={`/products/${id}`} className={styles.product__link}>
+        <Link to={`/products/${slug}`} className={styles.product__link}>
           SEE PRODUCT
         </Link>
       </div>

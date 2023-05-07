@@ -2,19 +2,14 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts, selectProductsStatus } from "./productsSlice";
 import Footer from "./components/Footer";
 import CategoryPage from "./pages/CategoryPage";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "./getProducts";
 
 function App() {
-  const dispatch = useDispatch();
-  const status = useSelector(selectProductsStatus);
+  const { status } = useQuery(["products"], getProducts);
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
