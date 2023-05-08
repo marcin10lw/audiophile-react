@@ -34,6 +34,8 @@
   @include description($black);
   opacity: 0.5;
   margin-top: 32px;
+  font-family: "Manrope", sans-serif;
+  white-space: break-spaces;
 
   @include breakpoint(mobile) {
     margin-top: 24px;

@@ -15,7 +15,7 @@ const ProductInfo = ({ features, included }: ProductInfoProps) => {
       <section className={styles.productInfo}>
         <article className={styles.features}>
           <h2 className={styles.heading}>FEATURES</h2>
-          <p className={styles.productInfo__text}>{features}</p>
+          <pre className={styles.productInfo__text}>{features}</pre>
         </article>
         <article className={styles.box}>
           <h2 className={styles.heading}>IN THE BOX</h2>

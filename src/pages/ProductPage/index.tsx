@@ -24,11 +24,7 @@ const ProductPage = () => {
             <GoBack />
             <Product
               key={product.id}
-              name={product.name}
-              description={product.description}
-              image={product.image}
-              slug={product.slug}
-              isNew={product.new}
+              product={product}
               location="productPage"
             />
             <ProductInfo

@@ -16,14 +16,7 @@ const Products = () => {
     <section className={styles.products}>
       {productsByCategory &&
         productsByCategory.map((product) => (
-          <Product
-            key={product.id}
-            name={product.name}
-            description={product.description}
-            image={product.categoryImage}
-            slug={product.slug}
-            isNew={product.new}
-          />
+          <Product key={product.id} product={product} />
         ))}
     </section>
   );
