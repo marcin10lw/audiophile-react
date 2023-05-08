@@ -15,12 +15,12 @@ const Gallery = ({ gallery }: GalleryProps) => {
   const matchesMobile = useMediaQuery("(max-width: 768px)");
 
   const getImage = (number: "first" | "second" | "third") => {
-    if (matchesTablet) {
-      return gallery[`${number}`].tablet;
-    }
-
     if (matchesMobile) {
       return gallery[`${number}`].mobile;
+    }
+
+    if (matchesTablet) {
+      return gallery[`${number}`].tablet;
     }
 
     return gallery[`${number}`].desktop;
