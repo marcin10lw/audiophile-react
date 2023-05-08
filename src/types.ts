@@ -4,6 +4,12 @@ export type Image = {
   mobile: string;
 };
 
+export type RecommendedProductType = {
+  image: Image;
+  name: string;
+  slug: string;
+};
+
 export type ProductType = {
   id: number;
   new: boolean;
@@ -17,6 +23,7 @@ export type ProductType = {
     second: Image;
     third: Image;
   };
+  others: RecommendedProductType[];
   slug: string;
   category: string;
   features: string;

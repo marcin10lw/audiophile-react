@@ -1,6 +1,7 @@
 import { useMediaQuery } from "@material-ui/core";
 import { Image } from "../../../types";
 import styles from "./index.module.scss";
+import AnimationWrapper from "../../../components/AnimationWrapper";
 
 type GalleryProps = {
   gallery: {
@@ -27,26 +28,28 @@ const Gallery = ({ gallery }: GalleryProps) => {
   };
 
   return (
-    <section className={styles.gallery}>
-      <img
-        className={`${styles.gallery__image} ${styles["gallery__image--first"]}`}
-        src={`${process.env.PUBLIC_URL}${getImage("first")}`}
-        alt=""
-        draggable={false}
-      />
-      <img
-        className={`${styles.gallery__image} ${styles["gallery__image--second"]}`}
-        src={`${process.env.PUBLIC_URL}${getImage("second")}`}
-        alt=""
-        draggable={false}
-      />
-      <img
-        className={`${styles.gallery__image} ${styles["gallery__image--third"]}`}
-        src={`${process.env.PUBLIC_URL}${getImage("third")}`}
-        alt=""
-        draggable={false}
-      />
-    </section>
+    <AnimationWrapper>
+      <section className={styles.gallery}>
+        <img
+          className={`${styles.gallery__image} ${styles["gallery__image--first"]}`}
+          src={`${process.env.PUBLIC_URL}${getImage("first")}`}
+          alt=""
+          draggable={false}
+        />
+        <img
+          className={`${styles.gallery__image} ${styles["gallery__image--second"]}`}
+          src={`${process.env.PUBLIC_URL}${getImage("second")}`}
+          alt=""
+          draggable={false}
+        />
+        <img
+          className={`${styles.gallery__image} ${styles["gallery__image--third"]}`}
+          src={`${process.env.PUBLIC_URL}${getImage("third")}`}
+          alt=""
+          draggable={false}
+        />
+      </section>
+    </AnimationWrapper>
   );
 };
 

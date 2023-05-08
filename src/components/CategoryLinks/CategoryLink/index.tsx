@@ -18,7 +18,7 @@ const CategoryLink = ({ title, onClick }: CategoryLinkProps) => {
           draggable={false}
         />
         <div className={styles.category__info}>
-          <h2 className={styles.category__name}>{title.toLocaleUpperCase()}</h2>
+          <h3 className={styles.category__name}>{title.toLocaleUpperCase()}</h3>
           <div className={styles.redirect}>
             <span>SHOP</span>
             <Arrow className={styles.redirect__icon} />

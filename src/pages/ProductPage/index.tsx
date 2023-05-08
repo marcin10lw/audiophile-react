@@ -9,17 +9,27 @@ import { useParams } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
 import GoBack from "./GoBack";
 import Gallery from "./Gallery";
+import Recommended from "./Recommended";
+import { useEffect, useState } from "react";
 
 const ProductPage = () => {
   const { status, data } = useQuery(["products"], getProducts);
+  const [exampleStatus, setExampleStatus] = useState("idle");
   const { name } = useParams();
   const product = data?.find((product) => product.slug === name);
 
-  if (status === "loading") return <Loader />;
+  useEffect(() => {
+    setExampleStatus("loading");
+    setTimeout(() => {
+      setExampleStatus("success");
+    }, 500);
+  }, [name]);
+
+  if (status === "loading" || exampleStatus === "loading") return <Loader />;
 
   return (
     <>
-      {product && (
+      {product && exampleStatus === "success" && (
         <Container wide={true}>
           <Container>
             <GoBack />
@@ -29,6 +39,7 @@ const ProductPage = () => {
               included={product.includes}
             />
             <Gallery gallery={product.gallery} />
+            <Recommended otherProducts={product.others} />
             <nav>
               <CategoryLinks />
             </nav>

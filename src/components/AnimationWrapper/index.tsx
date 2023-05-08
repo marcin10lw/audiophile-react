@@ -1,5 +1,7 @@
-import { useAnimation, useInView, motion } from "framer-motion";
-import { PropsWithChildren, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { PropsWithChildren } from "react";
+import useInViewAnimation from "../../useInViewAnimation";
+import { useLocation } from "react-router-dom";
 
 const variants = {
   hidden: {
@@ -10,7 +12,7 @@ const variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.1,
+      delay: 0.15,
       duration: 0.8,
       ease: "easeInOut",
     },
@@ -18,15 +20,7 @@ const variants = {
 };
 
 const AnimationWrapper = ({ children }: PropsWithChildren) => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { amount: 0.4 });
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      animation.start("visible");
-    }
-  }, [animation, inView]);
+  const { animation, ref } = useInViewAnimation(0.3);
 
   return (
     <motion.div

@@ -1,0 +1,44 @@
+@use "../../../scss/style.scss" as *;
+
+.aside {
+  margin-bottom: 160px;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 120px;
+  }
+}
+
+.aside__header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+  color: $black;
+  text-align: center;
+  margin-bottom: 64px;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 56px;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 24px;
+    letter-spacing: 0.86px;
+    margin-bottom: 40px;
+  }
+}
+
+.recommended {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @include breakpoint(tablet) {
+    gap: 11px;
+  }
+
+  @include breakpoint(mobile) {
+    grid-template-columns: auto;
+    gap: 56px;
+  }
+}
