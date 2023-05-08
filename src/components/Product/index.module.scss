@@ -36,6 +36,7 @@
   }
 
   @include breakpoint(tablet) {
+    flex-direction: row;
     gap: 69px;
     text-align: start;
   }
