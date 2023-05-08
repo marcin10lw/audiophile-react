@@ -14,7 +14,6 @@ type ProductProps = {
 
 const Product = ({ product, location }: ProductProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [productAmount, setProductAmount] = useState(0);
   const { animation, ref } = useInViewAnimation(0.4);
   console.log(product);
 

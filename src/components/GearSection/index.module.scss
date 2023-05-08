@@ -1,14 +1,13 @@
 @use "../../scss/style.scss" as *;
 
 .section {
-  display: grid;
-  grid-template-columns: minmax(0, 445px) auto;
+  display: flex;
   align-items: center;
   gap: 125px;
   margin: 160px 0 160px;
 
   @include breakpoint(tablet) {
-    grid-template-columns: auto;
+    flex-direction: column-reverse;
     gap: 63px;
     margin: 120px 0 120px;
   }
@@ -66,6 +65,7 @@
 }
 
 .section__image {
+  display: block;
   width: 100%;
   border-radius: 8px;
   content: url("./images/image-best-gear-desktop.jpg");
