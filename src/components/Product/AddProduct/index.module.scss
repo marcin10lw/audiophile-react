@@ -34,9 +34,16 @@
   cursor: pointer;
   transition: color 100ms ease-in-out, opacity 100ms ease-in-out;
 
-  &:hover {
-    color: $orange;
-    opacity: 1;
+  &:not(:disabled) {
+    &:hover {
+      color: $orange;
+      opacity: 1;
+    }
+  }
+
+  &:disabled {
+    cursor: auto;
+    color: $black;
   }
 }
 

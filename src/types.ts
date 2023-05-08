@@ -1,4 +1,4 @@
-type Image = {
+export type Image = {
   desktop: string;
   tablet: string;
   mobile: string;
@@ -12,6 +12,11 @@ export type ProductType = {
   description: string;
   categoryImage: Image;
   image: Image;
+  gallery: {
+    first: Image;
+    second: Image;
+    third: Image;
+  };
   slug: string;
   category: string;
   features: string;

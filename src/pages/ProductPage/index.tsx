@@ -8,6 +8,7 @@ import Product from "../../components/Product";
 import { useParams } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
 import GoBack from "./GoBack";
+import Gallery from "./Gallery";
 
 const ProductPage = () => {
   const { status, data } = useQuery(["products"], getProducts);
@@ -22,15 +23,12 @@ const ProductPage = () => {
         <Container wide={true}>
           <Container>
             <GoBack />
-            <Product
-              key={product.id}
-              product={product}
-              location="productPage"
-            />
+            <Product product={product} location="productPage" />
             <ProductInfo
               features={product.features}
               included={product.includes}
             />
+            <Gallery gallery={product.gallery} />
             <nav>
               <CategoryLinks />
             </nav>
