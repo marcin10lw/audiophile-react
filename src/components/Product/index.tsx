@@ -15,7 +15,6 @@ type ProductProps = {
 const Product = ({ product, location }: ProductProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { animation, ref } = useInViewAnimation(0.4);
-  console.log(product);
 
   const isInProductPage = location === "productPage";
   const formattedPrice = product.price.toLocaleString("en-US", {
