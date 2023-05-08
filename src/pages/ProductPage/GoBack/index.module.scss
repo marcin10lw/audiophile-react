@@ -1,0 +1,21 @@
+@use "../../../scss/style.scss" as *;
+
+.goBack {
+  margin: 79px 0 56px;
+
+  @include breakpoint(tablet) {
+    margin: 33px 0 24px;
+  }
+
+  @include breakpoint(mobile) {
+    margin: 16px 0 24px;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    @include description($black);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}

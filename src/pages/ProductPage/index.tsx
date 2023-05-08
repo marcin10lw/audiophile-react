@@ -7,6 +7,7 @@ import GearSection from "../../components/GearSection";
 import Product from "../../components/Product";
 import { useParams } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
+import GoBack from "./GoBack";
 
 const ProductPage = () => {
   const { status, data } = useQuery(["products"], getProducts);
@@ -20,6 +21,7 @@ const ProductPage = () => {
       {product && (
         <Container wide={true}>
           <Container>
+            <GoBack />
             <Product
               key={product.id}
               name={product.name}
