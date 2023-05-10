@@ -1,8 +1,8 @@
 import styles from "./index.module.scss";
 import { useParams } from "react-router-dom";
-import Product from "../../../components/Product";
 import { getProducts } from "../../../getProducts";
 import { useQuery } from "@tanstack/react-query";
+import CategoryProduct from "../CategoryProduct";
 
 const Products = () => {
   const { name } = useParams();
@@ -16,7 +16,7 @@ const Products = () => {
     <section className={styles.products}>
       {productsByCategory &&
         productsByCategory.map((product) => (
-          <Product key={product.id} product={product} />
+          <CategoryProduct key={product.id} product={product} />
         ))}
     </section>
   );

@@ -1,4 +1,4 @@
-@use "../../scss/style.scss" as *;
+@use "../../../scss/style.scss" as *;
 
 .product {
   display: flex;
@@ -6,37 +6,7 @@
   gap: 125px;
   margin-bottom: 160px;
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-
-    @include breakpoint(tablet) {
-      flex-direction: column;
-    }
-  }
-
   @include breakpoint(tablet) {
-    flex-direction: column;
-    text-align: center;
-    gap: 52px;
-    margin-bottom: 120px;
-  }
-
-  @include breakpoint(mobile) {
-    gap: 32px;
-  }
-}
-
-.product--productPage {
-  &:nth-child(even) {
-    flex-direction: row;
-
-    @include breakpoint(mobile) {
-      flex-direction: column;
-    }
-  }
-
-  @include breakpoint(tablet) {
-    flex-direction: row;
     gap: 69px;
     text-align: start;
   }
@@ -72,11 +42,6 @@
   @include breakpoint(mobile) {
     margin-bottom: 24px;
     max-width: 250px;
-  }
-}
-
-.product__name--productPage {
-  @include breakpoint(mobile) {
     margin-left: 0;
   }
 }

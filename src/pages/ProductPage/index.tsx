@@ -10,6 +10,7 @@ import ProductInfo from "./ProductInfo";
 import GoBack from "./GoBack";
 import Gallery from "./Gallery";
 import Recommended from "./Recommended";
+import DetailedProduct from "./DetailedProduct";
 
 const ProductPage = () => {
   const { status, data } = useQuery(["products"], getProducts);
@@ -26,7 +27,7 @@ const ProductPage = () => {
             <Container>
               <GoBack />
               <div key={name}>
-                <Product product={product} location="productPage" />
+                <DetailedProduct product={product} />
               </div>
               <ProductInfo
                 features={product.features}
