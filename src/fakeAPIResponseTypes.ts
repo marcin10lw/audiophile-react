@@ -32,3 +32,5 @@ export type ProductType = {
     item: string;
   }[];
 };
+
+export type ProductAPIResponse = ProductType[];

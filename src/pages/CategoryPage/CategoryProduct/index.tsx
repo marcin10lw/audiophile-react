@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import useInViewAnimation from "../../../useInViewAnimation";
 import { productVariants } from "./productVariants";
-import { ProductType } from "../../../types";
+import { ProductType } from "../../../fakeAPIResponseTypes";
 
 type ProductProps = {
   product: ProductType;

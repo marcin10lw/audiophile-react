@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@material-ui/core";
-import { Image } from "../../../types";
+import { Image } from "../../../fakeAPIResponseTypes";
 import styles from "./index.module.scss";
 import AnimationWrapper from "../../../components/AnimationWrapper";
 

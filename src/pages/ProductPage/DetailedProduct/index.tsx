@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
 import styles from "./index.module.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useInViewAnimation from "../../../useInViewAnimation";
 import { productVariants } from "./productVariants";
-import { ProductType } from "../../../types";
+import { ProductType } from "../../../fakeAPIResponseTypes";
 import AddProduct from "./AddProduct";
 
 type ProductProps = {

@@ -4,16 +4,19 @@ import Loader from "../../components/Loader";
 import Container from "../../components/Container";
 import CategoryLinks from "../../components/CategoryLinks";
 import GearSection from "../../components/GearSection";
-import Product from "../../components/Product";
 import { useParams } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
 import GoBack from "./GoBack";
 import Gallery from "./Gallery";
 import Recommended from "./Recommended";
 import DetailedProduct from "./DetailedProduct";
+import { ProductAPIResponse } from "../../fakeAPIResponseTypes";
 
 const ProductPage = () => {
-  const { status, data } = useQuery(["products"], getProducts);
+  const { status, data } = useQuery<ProductAPIResponse>(
+    ["products"],
+    getProducts
+  );
   const { name } = useParams();
 
   const product = data?.find((product) => product.slug === name);

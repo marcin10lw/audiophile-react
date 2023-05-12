@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
-import { Image } from "../../../../types";
+import { Image } from "../../../../fakeAPIResponseTypes";
 import { useMediaQuery } from "@material-ui/core";
 
 type RecommendedProductProps = {

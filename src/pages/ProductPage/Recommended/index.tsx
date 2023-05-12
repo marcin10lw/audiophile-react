@@ -1,4 +1,4 @@
-import { RecommendedProductType } from "../../../types";
+import { RecommendedProductType } from "../../../fakeAPIResponseTypes";
 import RecommendedProduct from "./RecommendedProduct";
 import styles from "./index.module.scss";
 
