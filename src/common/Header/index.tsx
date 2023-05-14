@@ -10,15 +10,21 @@ import CategoryLinks from "../CategoryLinks";
 import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
 import { useMediaQuery } from "@material-ui/core";
+import Cart from "../Cart";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
+  console.log(isCartOpen);
 
   return (
     <>
-      <Backdrop onClick={() => setIsMenuOpen(false)} isMenuOpen={isMenuOpen} />
+      <Backdrop
+        onClick={() => setIsMenuOpen(false)}
+        showBackDrop={isMenuOpen}
+      />
       <header
         className={`${styles.header} ${
           pathname === "/home" ? styles["header--home"] : ""
@@ -60,12 +66,19 @@ const Header = () => {
           </nav>
 
           <button
+            onClick={() => setIsCartOpen((isCartOpen) => !isCartOpen)}
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
           >
             <CartIcon />
           </button>
         </div>
+
+        <Cart />
       </header>
+      <Backdrop
+        onClick={() => setIsCartOpen(false)}
+        showBackDrop={isCartOpen}
+      />
     </>
   );
 };

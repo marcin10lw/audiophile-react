@@ -4,13 +4,13 @@ import { MouseEventHandler } from "react";
 
 type BackdropProps = {
   onClick: MouseEventHandler<HTMLDivElement>;
-  isMenuOpen: boolean;
+  showBackDrop: boolean;
 };
 
-const Backdrop = ({ onClick, isMenuOpen }: BackdropProps) => {
+const Backdrop = ({ onClick, showBackDrop }: BackdropProps) => {
   return (
     <AnimatePresence>
-      {isMenuOpen && (
+      {showBackDrop && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
