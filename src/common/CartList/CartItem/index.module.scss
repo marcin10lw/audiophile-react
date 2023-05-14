@@ -1,29 +1,37 @@
 @use "../../../scss/style.scss" as *;
 
 .cartItem {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: auto 1fr auto;
 }
 
 .cartItem__image {
   border-radius: 8px;
+  min-width: 40px;
 }
 
 .cartItem__info {
   margin: 0 16px 0;
+  font-weight: 700;
+  line-height: 25px;
 
   h5 {
-    font-weight: 700;
     font-size: 15px;
-    line-height: 25px;
+
+    @include breakpoint(mobileSmall) {
+      font-size: 12px;
+    }
   }
 
   p {
-    font-weight: 700;
     font-size: 14px;
-    line-height: 25px;
     color: $black;
     opacity: 0.5;
+
+    @include breakpoint(mobileSmall) {
+      font-size: 11px;
+    }
   }
 }
 

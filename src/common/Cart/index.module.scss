@@ -19,6 +19,10 @@
     transform: translateX(-50%);
     padding: 32px 28px;
   }
+
+  @include breakpoint(mobileSmall) {
+    min-width: 90%;
+  }
 }
 
 .cart__header {

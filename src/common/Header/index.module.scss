@@ -88,15 +88,31 @@
 }
 
 .header__button--cart {
+  position: relative;
   margin-left: auto;
   color: $white;
   @include hoverTransition(color);
 
-  &:hover {
+  &:hover svg {
     color: $orange;
   }
 
   @include breakpoint(mobile) {
     margin-left: 0;
   }
+}
+
+.productsAmount {
+  position: absolute;
+  bottom: -2px;
+  right: -9px;
+  display: block;
+  background-color: $orange;
+  font-size: 13px;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

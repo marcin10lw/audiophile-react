@@ -11,12 +11,15 @@ import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
 import { useMediaQuery } from "@material-ui/core";
 import Cart from "../Cart";
+import { useSelector } from "react-redux";
+import { selectCartProducts } from "../../cartSlice";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
+  const cartProduct = useSelector(selectCartProducts);
 
   return (
     <>
@@ -69,6 +72,11 @@ const Header = () => {
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
           >
             <CartIcon />
+            {!!cartProduct.length && (
+              <span className={styles.productsAmount}>
+                {cartProduct.length}
+              </span>
+            )}
           </button>
         </div>
 
