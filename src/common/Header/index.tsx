@@ -17,7 +17,6 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
-  console.log(isCartOpen);
 
   return (
     <>
@@ -73,7 +72,7 @@ const Header = () => {
           </button>
         </div>
 
-        <Cart />
+        <Cart showCart={isCartOpen} />
       </header>
       <Backdrop
         onClick={() => setIsCartOpen(false)}

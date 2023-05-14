@@ -45,7 +45,7 @@ const DetailedProduct = ({ product }: ProductProps) => {
         <p className={styles.product__description}>{product.description}</p>
         <>
           <div className={styles.product__price}>$ {formattedPrice}</div>
-          <AddProduct />
+          <AddProduct product={product} />
         </>
       </article>
     </motion.section>
