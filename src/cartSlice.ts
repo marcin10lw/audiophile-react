@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-type CartProduct = {
+export type CartProduct = {
   id: number;
   image: string;
   name: string;

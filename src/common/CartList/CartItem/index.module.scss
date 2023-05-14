@@ -1,0 +1,63 @@
+@use "../../../scss/style.scss" as *;
+
+.cartItem {
+  display: flex;
+  align-items: center;
+}
+
+.cartItem__image {
+  border-radius: 8px;
+}
+
+.cartItem__info {
+  margin-left: 16px;
+
+  h5 {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+    color: $black;
+    opacity: 0.5;
+  }
+}
+
+.cartItem__changeAmount {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 96px;
+  height: 32px;
+  margin-left: auto;
+  text-align: center;
+  background-color: $seaShell;
+
+  button {
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17.76px;
+    letter-spacing: 1px;
+    opacity: 0.25;
+
+    &:hover {
+      color: $orange;
+      opacity: 1;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17.76px;
+    letter-spacing: 1px;
+  }
+}

@@ -1,12 +1,7 @@
 import { useState } from "react";
 import styles from "./index.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  addProduct,
-  selectCartProducts,
-  selectTotalAmount,
-  selectTotalPrice,
-} from "../../../../cartSlice";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../../../cartSlice";
 import { ProductType } from "../../../../fakeAPIResponseTypes";
 
 type AddProductProps = {
@@ -15,10 +10,6 @@ type AddProductProps = {
 
 const AddProduct = ({ product }: AddProductProps) => {
   const [productAmount, setProductAmount] = useState(1);
-  const cartProducts = useSelector(selectCartProducts);
-  const totalAmount = useSelector(selectTotalAmount);
-  const totalPrice = useSelector(selectTotalPrice);
-  console.log(cartProducts, totalAmount, totalPrice);
 
   const dispatch = useDispatch();
 
