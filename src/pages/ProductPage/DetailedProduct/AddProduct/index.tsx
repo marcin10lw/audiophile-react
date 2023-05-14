@@ -23,8 +23,6 @@ const AddProduct = ({ product }: AddProductProps) => {
         id: product.id,
       })
     );
-
-    setProductAmount(1);
   };
 
   return (

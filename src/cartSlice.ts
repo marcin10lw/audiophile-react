@@ -66,10 +66,20 @@ const cartSlice = createSlice({
       existingProduct!.amount += 1;
       state.totalPrice += existingProduct!.price;
     },
+    removeAllProductsFromCart: (state) => {
+      state.cartProducts = [];
+      state.totalPrice = 0;
+      toast.info("All items have been removed from your cart");
+    },
   },
 });
 
-export const { addProduct, decreaseAmount, increaseAmount } = cartSlice.actions;
+export const {
+  addProduct,
+  decreaseAmount,
+  increaseAmount,
+  removeAllProductsFromCart,
+} = cartSlice.actions;
 
 const selectCartState = (state: RootState) => state.cart;
 
