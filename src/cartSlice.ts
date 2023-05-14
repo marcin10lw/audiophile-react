@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
+import { toast } from "react-toastify";
 
 export type CartProduct = {
   id: number;
@@ -24,15 +25,17 @@ const cartSlice = createSlice({
   } as InitialStateType,
   reducers: {
     addProduct: (state, { payload }: { payload: CartProduct }) => {
-      const { id, amount, price } = payload;
+      const { id, amount, price, name } = payload;
       const existingProduct = state.cartProducts.find(
         (product) => product.id === id
       );
 
       if (existingProduct) {
         existingProduct.amount += amount;
+        toast.info(`${name.toLocaleUpperCase()} amount was increased`);
       } else {
         state.cartProducts.push(payload);
+        toast.success(`${name.toLocaleUpperCase()} was added to cart`);
       }
 
       state.totalPrice += amount * price;
@@ -45,6 +48,9 @@ const cartSlice = createSlice({
       if (existingProduct?.amount === 1) {
         state.cartProducts = state.cartProducts.filter(
           (product) => product.id !== id
+        );
+        toast.info(
+          `${existingProduct.name.toLocaleUpperCase()} was removed from cart`
         );
       } else {
         existingProduct!.amount -= 1;

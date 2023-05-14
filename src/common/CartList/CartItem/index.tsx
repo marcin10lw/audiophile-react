@@ -33,7 +33,7 @@ const CartItem = ({ product }: CartItemProps) => {
         alt={product.name}
       />
       <div className={styles.cartItem__info}>
-        <h5>{product.name}</h5>
+        <h5>{product.name.toLocaleUpperCase()}</h5>
         <p>$ {formatedPrice}</p>
       </div>
       <div className={styles.cartItem__changeAmount}>
