@@ -35,13 +35,35 @@ const cartSlice = createSlice({
         state.cartProducts.push(payload);
       }
 
-      state.totalAmount += amount;
       state.totalPrice += amount * price;
+    },
+    decreaseAmount: (state, { payload: id }: { payload: number }) => {
+      const existingProduct = state.cartProducts.find(
+        (product) => product.id === id
+      );
+
+      if (existingProduct?.amount === 1) {
+        state.cartProducts = state.cartProducts.filter(
+          (product) => product.id !== id
+        );
+      } else {
+        existingProduct!.amount -= 1;
+      }
+
+      state.totalPrice -= existingProduct!.price;
+    },
+    increaseAmount: (state, { payload: id }: { payload: number }) => {
+      const existingProduct = state.cartProducts.find(
+        (product) => product.id === id
+      );
+
+      existingProduct!.amount += 1;
+      state.totalPrice += existingProduct!.price;
     },
   },
 });
 
-export const { addProduct } = cartSlice.actions;
+export const { addProduct, decreaseAmount, increaseAmount } = cartSlice.actions;
 
 const selectCartState = (state: RootState) => state.cart;
 

@@ -1,4 +1,10 @@
-import { CartProduct } from "../../../cartSlice";
+import { useDispatch } from "react-redux";
+import {
+  CartProduct,
+  decreaseAmount,
+  increaseAmount,
+} from "../../../cartSlice";
+import { formatPrice } from "../../formatPrice";
 import styles from "./index.module.scss";
 
 type CartItemProps = {
@@ -6,6 +12,18 @@ type CartItemProps = {
 };
 
 const CartItem = ({ product }: CartItemProps) => {
+  const formatedPrice = formatPrice(product.price);
+  const dispatch = useDispatch();
+
+  const onDecreaseAmount = () => {
+    if (product.amount === 0) return;
+    dispatch(decreaseAmount(product.id));
+  };
+
+  const onIncreaseAmount = () => {
+    dispatch(increaseAmount(product.id));
+  };
+
   return (
     <li className={styles.cartItem}>
       <img
@@ -15,13 +33,13 @@ const CartItem = ({ product }: CartItemProps) => {
         alt={product.name}
       />
       <div className={styles.cartItem__info}>
-        <h5>XX99 MK II</h5>
-        <p>$ 2,999</p>
+        <h5>{product.name}</h5>
+        <p>$ {formatedPrice}</p>
       </div>
       <div className={styles.cartItem__changeAmount}>
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
+        <button onClick={onDecreaseAmount}>-</button>
+        <span>{product.amount}</span>
+        <button onClick={onIncreaseAmount}>+</button>
       </div>
     </li>
   );

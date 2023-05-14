@@ -5,6 +5,7 @@ import useInViewAnimation from "../../../useInViewAnimation";
 import { productVariants } from "./productVariants";
 import { ProductType } from "../../../fakeAPIResponseTypes";
 import AddProduct from "./AddProduct";
+import { formatPrice } from "../../../common/formatPrice";
 
 type ProductProps = {
   product: ProductType;
@@ -14,9 +15,7 @@ const DetailedProduct = ({ product }: ProductProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { animation, ref } = useInViewAnimation(0.4);
 
-  const formattedPrice = product.price.toLocaleString("en-US", {
-    minimumFractionDigits: 0,
-  });
+  const formattedPrice = formatPrice(product.price);
 
   return (
     <motion.section
