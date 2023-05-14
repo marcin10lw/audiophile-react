@@ -1,4 +1,4 @@
-import AnimationWrapper from "../../../components/AnimationWrapper";
+import AnimationWrapper from "../../../common/AnimationWrapper";
 import styles from "./index.module.scss";
 
 type ProductInfoProps = {

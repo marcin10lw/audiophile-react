@@ -1,22 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../../getProducts";
-import Loader from "../../components/Loader";
-import Container from "../../components/Container";
-import CategoryLinks from "../../components/CategoryLinks";
-import GearSection from "../../components/GearSection";
+import Loader from "../../common/Loader";
+import Container from "../../common/Container";
+import CategoryLinks from "../../common/CategoryLinks";
+import GearSection from "../../common/GearSection";
 import { useParams } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
 import GoBack from "./GoBack";
 import Gallery from "./Gallery";
 import Recommended from "./Recommended";
 import DetailedProduct from "./DetailedProduct";
-import { ProductAPIResponse } from "../../fakeAPIResponseTypes";
 
 const ProductPage = () => {
-  const { status, data } = useQuery<ProductAPIResponse>(
-    ["products"],
-    getProducts
-  );
+  const { status, data } = useQuery(["products"], getProducts);
   const { name } = useParams();
 
   const product = data?.find((product) => product.slug === name);

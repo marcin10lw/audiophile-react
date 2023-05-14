@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import CategoryLinks from "../../components/CategoryLinks";
-import Container from "../../components/Container";
-import GearSection from "../../components/GearSection";
+import CategoryLinks from "../../common/CategoryLinks";
+import Container from "../../common/Container";
+import GearSection from "../../common/GearSection";
 import CategoryHeader from "./CategoryHeader";
-import Loader from "../../components/Loader";
+import Loader from "../../common/Loader";
 import Products from "./Products";
 import { getProducts } from "../../getProducts";
 import { useQuery } from "@tanstack/react-query";

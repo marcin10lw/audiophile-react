@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Container from "../../../components/Container";
+import Container from "../../../common/Container";
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 

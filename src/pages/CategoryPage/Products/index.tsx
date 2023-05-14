@@ -3,14 +3,10 @@ import { useParams } from "react-router-dom";
 import { getProducts } from "../../../getProducts";
 import { useQuery } from "@tanstack/react-query";
 import CategoryProduct from "../CategoryProduct";
-import { ProductAPIResponse } from "../../../fakeAPIResponseTypes";
 
 const Products = () => {
   const { name } = useParams();
-  const { data: products } = useQuery<ProductAPIResponse>(
-    ["products"],
-    getProducts
-  );
+  const { data: products } = useQuery(["products"], getProducts);
 
   const productsByCategory = products
     ?.filter((product) => product.category === name)

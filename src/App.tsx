@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import Header from "./components/Header";
+import Header from "./common/Header";
 import { useEffect } from "react";
-import Footer from "./components/Footer";
+import Footer from "./common/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "./getProducts";
