@@ -7,6 +7,7 @@ import CategoryPage from "./pages/CategoryPage";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "./getProducts";
 import ProductPage from "./pages/ProductPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   const { status } = useQuery(["products"], getProducts);
@@ -25,6 +26,7 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/category/:name" element={<CategoryPage />} />
           <Route path="/product/:name" element={<ProductPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </main>
       {status === "success" && <Footer />}

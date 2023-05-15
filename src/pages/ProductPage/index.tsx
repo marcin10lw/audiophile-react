@@ -6,7 +6,7 @@ import CategoryLinks from "../../common/CategoryLinks";
 import GearSection from "../../common/GearSection";
 import { useParams } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
-import GoBack from "./GoBack";
+import GoBack from "../../common/GoBack";
 import Gallery from "./Gallery";
 import Recommended from "./Recommended";
 import DetailedProduct from "./DetailedProduct";

@@ -1,9 +1,15 @@
-import styles from "./index.module.scss"
+import Container from "../../common/Container";
+import GoBack from "../../common/GoBack";
+import styles from "./index.module.scss";
 
 const CheckoutPage = () => {
   return (
-    <div>index</div>
-  )
-}
+    <Container wide={true}>
+      <Container>
+        <GoBack />
+      </Container>
+    </Container>
+  );
+};
 
-export default CheckoutPage
+export default CheckoutPage;

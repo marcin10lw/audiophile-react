@@ -6,17 +6,25 @@ import { selectCartProducts, selectTotalPrice } from "../../cartSlice";
 import { formatPrice } from "../formatPrice";
 import { useState } from "react";
 import Warning from "./Warning";
+import { useNavigate } from "react-router-dom";
 
 type CartProps = {
   showCart: boolean;
+  closeCart: () => void;
 };
 
-const Cart = ({ showCart }: CartProps) => {
+const Cart = ({ showCart, closeCart }: CartProps) => {
   const [showWarning, setShowWarning] = useState(false);
 
   const cartProducts = useSelector(selectCartProducts);
   const totalPrice = useSelector(selectTotalPrice);
   const formatedPrice = formatPrice(totalPrice);
+  const navigate = useNavigate();
+
+  const onCheckoutClick = () => {
+    navigate("/checkout");
+    closeCart();
+  };
 
   return (
     <AnimatePresence>
@@ -45,6 +53,7 @@ const Cart = ({ showCart }: CartProps) => {
             <span className={styles.total__amount}>$ {formatedPrice}</span>
           </div>
           <button
+            onClick={onCheckoutClick}
             disabled={!cartProducts.length}
             className={styles.cart__checkout}
           >

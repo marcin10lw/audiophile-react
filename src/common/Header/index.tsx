@@ -21,6 +21,10 @@ const Header = () => {
   const matches = useMediaQuery("(max-width: 940px");
   const cartProduct = useSelector(selectCartProducts);
 
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
+
   return (
     <>
       <Backdrop
@@ -80,7 +84,7 @@ const Header = () => {
           </button>
         </div>
 
-        <Cart showCart={isCartOpen} />
+        <Cart showCart={isCartOpen} closeCart={closeCart} />
       </header>
       <Backdrop
         onClick={() => setIsCartOpen(false)}
