@@ -6,6 +6,7 @@ import {
 } from "../../../cartSlice";
 import { formatPrice } from "../../formatPrice";
 import styles from "./index.module.scss";
+import { Link } from "react-router-dom";
 
 type CartItemProps = {
   product: CartProduct;
@@ -26,14 +27,16 @@ const CartItem = ({ product }: CartItemProps) => {
 
   return (
     <li className={styles.cartItem}>
-      <img
-        className={styles.cartItem__image}
-        width={64}
-        src={`${process.env.PUBLIC_URL}${product.image}`}
-        alt={product.name}
-      />
+      <div className={styles.cartItem__image}>
+        <img
+          src={`${process.env.PUBLIC_URL}${product.image}`}
+          alt={product.name}
+        />
+      </div>
       <div className={styles.cartItem__info}>
-        <h5>{product.name.toLocaleUpperCase()}</h5>
+        <Link to={`/product/${product.slug}`}>
+          <h5>{product.name.toLocaleUpperCase()}</h5>
+        </Link>
         <p>$ {formatedPrice}</p>
       </div>
       <div className={styles.cartItem__changeAmount}>

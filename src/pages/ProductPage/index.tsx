@@ -22,12 +22,10 @@ const ProductPage = () => {
     <>
       {product && (
         <>
-          <Container wide={true}>
+          <Container key={name} wide={true}>
             <Container>
               <GoBack />
-              <div key={name}>
-                <DetailedProduct product={product} />
-              </div>
+              <DetailedProduct product={product} />
               <ProductInfo
                 features={product.features}
                 included={product.includes}

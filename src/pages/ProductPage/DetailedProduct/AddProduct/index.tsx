@@ -21,6 +21,7 @@ const AddProduct = ({ product }: AddProductProps) => {
         price: product.price,
         amount: productAmount,
         id: product.id,
+        slug: product.slug,
       })
     );
   };

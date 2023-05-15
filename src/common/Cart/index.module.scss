@@ -53,6 +53,12 @@
   }
 }
 
+.cart__message {
+  text-align: center;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
 .total {
   display: flex;
   justify-content: space-between;
@@ -76,4 +82,9 @@
   @include buttonOrange();
   width: 100%;
   margin-top: 24px;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }

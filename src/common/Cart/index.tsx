@@ -35,12 +35,21 @@ const Cart = ({ showCart }: CartProps) => {
               <button onClick={() => setShowWarning(true)}>Remove all</button>
             )}
           </header>
-          <CartList />
+          {cartProducts.length ? (
+            <CartList />
+          ) : (
+            <p className={styles.cart__message}>Your Cart is Empty</p>
+          )}
           <div className={styles.total}>
             <span className={styles.total__info}>TOTAL</span>
             <span className={styles.total__amount}>$ {formatedPrice}</span>
           </div>
-          <button className={styles.cart__checkout}>CHECKOUT</button>
+          <button
+            disabled={!cartProducts.length}
+            className={styles.cart__checkout}
+          >
+            CHECKOUT
+          </button>
         </motion.section>
       )}
     </AnimatePresence>
