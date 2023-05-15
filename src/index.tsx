@@ -22,7 +22,7 @@ root.render(
           autoClose={2500}
           pauseOnHover={false}
           position="bottom-left"
-          style={{ width: "500px" }}
+          style={{ maxWidth: "500px", width: "100%" }}
         />
         <App />
       </QueryClientProvider>

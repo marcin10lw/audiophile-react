@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { toast } from "react-toastify";
+import { getCartProductsFromLocalStorage } from "./cartProductsLocalStorage";
 
 export type CartProduct = {
   id: number;
@@ -20,7 +21,7 @@ type InitialStateType = {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartProducts: [],
+    cartProducts: getCartProductsFromLocalStorage(),
     totalAmount: 0,
     totalPrice: 0,
   } as InitialStateType,
