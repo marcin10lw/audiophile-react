@@ -1,10 +1,12 @@
 import { takeEvery, select, call } from "redux-saga/effects";
-import { CartProduct, selectCartProducts } from "./cartSlice";
-import { saveCartProductsToLocalStorage } from "./cartProductsLocalStorage";
+import { CartProduct, selectCartProducts, selectTotalPrice } from "./cartSlice";
+import { saveCartValueToLocalStorage } from "./cartValuesLocalStorage";
 
 function* saveCartProductsToLocalStorageHnadler() {
   const products: CartProduct[] = yield select(selectCartProducts);
-  yield call(saveCartProductsToLocalStorage, products);
+  const totalPrice: number = yield select(selectTotalPrice);
+  yield call(saveCartValueToLocalStorage, "cartProducts", products);
+  yield call(saveCartValueToLocalStorage, "totalPrice", totalPrice);
 }
 
 export function* cartSaga() {

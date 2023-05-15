@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { toast } from "react-toastify";
-import { getCartProductsFromLocalStorage } from "./cartProductsLocalStorage";
+import { getCartValueFromLocalStorage } from "./cartValuesLocalStorage";
 
 export type CartProduct = {
   id: number;
@@ -21,9 +21,9 @@ type InitialStateType = {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartProducts: getCartProductsFromLocalStorage(),
+    cartProducts: getCartValueFromLocalStorage("cartProducts", []),
     totalAmount: 0,
-    totalPrice: 0,
+    totalPrice: getCartValueFromLocalStorage("totalPrice", 0),
   } as InitialStateType,
   reducers: {
     addProduct: (state, { payload }: { payload: CartProduct }) => {
@@ -58,7 +58,11 @@ const cartSlice = createSlice({
         existingProduct!.amount -= 1;
       }
 
-      state.totalPrice -= existingProduct!.price;
+      if (state.totalPrice === 0) {
+        return;
+      } else {
+        state.totalPrice -= existingProduct!.price;
+      }
     },
     increaseAmount: (state, { payload: id }: { payload: number }) => {
       const existingProduct = state.cartProducts.find(
