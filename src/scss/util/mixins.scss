@@ -79,3 +79,25 @@
     letter-spacing: 1px;
   }
 }
+
+@mixin label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16.4px;
+  letter-spacing: -0.21px;
+  margin-bottom: 9px;
+}
+
+@mixin input {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19.12px;
+  letter-spacing: -0.25px;
+  color: $black;
+  padding: 18px 24px;
+  border-radius: 8px;
+  border: 1px solid #cfcfcf;
+}
