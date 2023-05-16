@@ -1,0 +1,9 @@
+@use "./scss/style.scss" as *;
+
+.main {
+  background-color: $alabaster;
+}
+
+.main--checkout {
+  background-color: $seaShell;
+}

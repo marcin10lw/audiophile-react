@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "./getProducts";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import styles from "./App.module.scss";
 
 function App() {
   const { status } = useQuery(["products"], getProducts);
@@ -20,7 +21,11 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main
+        className={
+          pathname === "/checkout" ? styles["main--checkout"] : styles.main
+        }
+      >
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<HomePage />} />

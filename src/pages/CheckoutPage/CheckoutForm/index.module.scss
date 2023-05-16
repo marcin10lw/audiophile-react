@@ -5,12 +5,40 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 16px;
   row-gap: 24px;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.form {
+.checkout {
   max-width: 730px;
   width: 100%;
   padding: 48px;
+  border-radius: 8px;
+  background-color: $white;
+
+  @include breakpoint(tablet) {
+    padding: 30px 28px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 24px 24px 30px;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14px;
+    margin-bottom: 40px;
+
+    @include breakpoint(mobile) {
+      font-size: 28px;
+      line-height: 38.25px;
+      letter-spacing: 1px;
+    }
+  }
 }
 
 .legend {
@@ -24,6 +52,10 @@
 
 .billing {
   margin-bottom: 52px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 32px;
+  }
 }
 
 .shippingInfo {
@@ -31,6 +63,10 @@
   flex-direction: column;
   gap: 24px;
   margin-bottom: 60px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 32px;
+  }
 }
 
 .label {
