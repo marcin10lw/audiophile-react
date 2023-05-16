@@ -1,14 +1,26 @@
-export const getCartValueFromLocalStorage = <T>(
-  key: string,
-  initialValue: T
-) => {
-  const localStorageCartProducts = localStorage.getItem(key);
+import { CartProduct } from "./cartSlice";
 
-  if (!localStorageCartProducts) return initialValue;
-
-  return JSON.parse(localStorageCartProducts);
+type LocalStorageValueType = {
+  cartProducts: CartProduct[] | [];
+  totalPrice: number;
 };
 
-export const saveCartValueToLocalStorage = <T>(key: string, value: T) => {
-  localStorage.setItem(key, JSON.stringify(value));
+export const getCartValueFromLocalStorage = () => {
+  const localStorageCartProducts = localStorage.getItem("cart");
+
+  if (!localStorageCartProducts) {
+    return {
+      cartProducts: [],
+      totalPrice: 0,
+    };
+  }
+
+  return JSON.parse(localStorageCartProducts) as LocalStorageValueType;
+};
+
+export const saveCartValueToLocalStorage = (value: {
+  cartProducts: CartProduct[];
+  totalPrice: number;
+}) => {
+  localStorage.setItem("cart", JSON.stringify(value));
 };

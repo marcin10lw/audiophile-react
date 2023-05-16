@@ -3,10 +3,9 @@ import { CartProduct, selectCartProducts, selectTotalPrice } from "./cartSlice";
 import { saveCartValueToLocalStorage } from "./cartValuesLocalStorage";
 
 function* saveCartProductsToLocalStorageHnadler() {
-  const products: CartProduct[] = yield select(selectCartProducts);
+  const cartProducts: CartProduct[] = yield select(selectCartProducts);
   const totalPrice: number = yield select(selectTotalPrice);
-  yield call(saveCartValueToLocalStorage, "cartProducts", products);
-  yield call(saveCartValueToLocalStorage, "totalPrice", totalPrice);
+  yield call(saveCartValueToLocalStorage, { cartProducts, totalPrice });
 }
 
 export function* cartSaga() {

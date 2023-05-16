@@ -21,9 +21,9 @@ type InitialStateType = {
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cartProducts: getCartValueFromLocalStorage("cartProducts", []),
+    cartProducts: getCartValueFromLocalStorage().cartProducts,
     totalAmount: 0,
-    totalPrice: getCartValueFromLocalStorage("totalPrice", 0),
+    totalPrice: getCartValueFromLocalStorage().totalPrice,
   } as InitialStateType,
   reducers: {
     addProduct: (state, { payload }: { payload: CartProduct }) => {
