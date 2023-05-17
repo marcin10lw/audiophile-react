@@ -13,5 +13,6 @@ export const getProducts: QueryFunction<
 > = async () => {
   await wait(500);
   const { data } = await axios.get(`${process.env.PUBLIC_URL}/data.json`);
+
   return data;
 };

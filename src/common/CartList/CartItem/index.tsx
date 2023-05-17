@@ -10,9 +10,10 @@ import { Link } from "react-router-dom";
 
 type CartItemProps = {
   product: CartProduct;
+  location?: string;
 };
 
-const CartItem = ({ product }: CartItemProps) => {
+const CartItem = ({ product, location }: CartItemProps) => {
   const formatedPrice = formatPrice(product.price);
   const dispatch = useDispatch();
 
@@ -34,15 +35,25 @@ const CartItem = ({ product }: CartItemProps) => {
         />
       </div>
       <div className={styles.cartItem__info}>
-        <Link to={`/product/${product.slug}`}>
-          <h5>{product.name.toLocaleUpperCase()}</h5>
-        </Link>
-        <p>$ {formatedPrice}</p>
-      </div>
-      <div className={styles.cartItem__changeAmount}>
-        <button onClick={onDecreaseAmount}>-</button>
-        <span>{product.amount}</span>
-        <button onClick={onIncreaseAmount}>+</button>
+        <div>
+          <Link to={`/product/${product.slug}`}>
+            <h5>
+              {product.short
+                ? product.short.toLocaleUpperCase()
+                : product.name.toLocaleUpperCase()}
+            </h5>
+          </Link>
+          <p>$ {formatedPrice}</p>
+        </div>
+        {location === "checkout" ? (
+          <span className={styles.cartItem__amount}>x{product.amount}</span>
+        ) : (
+          <div className={styles.cartItem__changeAmount}>
+            <button onClick={onDecreaseAmount}>-</button>
+            <span>{product.amount}</span>
+            <button onClick={onIncreaseAmount}>+</button>
+          </div>
+        )}
       </div>
     </li>
   );

@@ -19,7 +19,7 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
-  const cartProduct = useSelector(selectCartProducts);
+  const cartProducts = useSelector(selectCartProducts);
 
   const closeCart = () => {
     setIsCartOpen(false);
@@ -76,9 +76,9 @@ const Header = () => {
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
           >
             <CartIcon />
-            {!!cartProduct.length && (
+            {!!cartProducts.length && (
               <span className={styles.productsAmount}>
-                {cartProduct.length}
+                {cartProducts.length}
               </span>
             )}
           </button>

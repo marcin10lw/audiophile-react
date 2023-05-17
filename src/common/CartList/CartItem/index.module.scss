@@ -18,6 +18,8 @@
 }
 
 .cartItem__info {
+  display: flex;
+  align-items: center;
   margin: 0 16px 0;
   font-weight: 700;
   line-height: 25px;
@@ -39,6 +41,7 @@
   }
 
   p {
+    font-weight: 700;
     font-size: 14px;
     color: $black;
     opacity: 0.5;
@@ -47,6 +50,15 @@
       font-size: 11px;
     }
   }
+}
+
+.cartItem__amount {
+  align-self: flex-start;
+  font-weight: 700;
+  font-size: 14px;
+  color: $black;
+  opacity: 0.5;
+  margin-left: auto;
 }
 
 .cartItem__changeAmount {

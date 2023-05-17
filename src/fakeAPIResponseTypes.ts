@@ -14,6 +14,7 @@ export type ProductType = {
   id: number;
   new: boolean;
   name: string;
+  short: string;
   price: number;
   description: string;
   categoryImage: Image;

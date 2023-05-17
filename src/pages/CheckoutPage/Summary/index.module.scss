@@ -1,0 +1,53 @@
+@use "../../../scss/style.scss" as *;
+
+.summary {
+  max-width: 350px;
+  width: 100%;
+  background-color: $white;
+  border-radius: 8px;
+  padding: 32px 33px;
+}
+
+.summary__heading {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24.6px;
+  letter-spacing: 1.3px;
+  margin-bottom: 30px;
+}
+
+.info {
+  margin-top: 32px;
+}
+
+.info__detail {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24.6px;
+  margin-bottom: 8px;
+
+  span {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.5;
+  }
+}
+
+.info__detail--grandTotal {
+  @extend .info__detail;
+  margin-top: 24px;
+  color: $orange;
+
+  span {
+    color: $black;
+  }
+}
+
+.summary__button {
+  @include buttonOrange();
+  width: 100%;
+  margin-top: 32px;
+}

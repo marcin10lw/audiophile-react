@@ -10,6 +10,7 @@ export type CartProduct = {
   price: number;
   amount: number;
   slug: string;
+  short: string;
 };
 
 type InitialStateType = {
