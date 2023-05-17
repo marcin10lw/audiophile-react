@@ -1,6 +1,7 @@
 import Container from "../../common/Container";
 import GoBack from "../../common/GoBack";
-import CheckoutForm from "./CheckoutForm";
+import Checkout from "./Checkout";
+import Summary from "./Summary";
 import styles from "./index.module.scss";
 
 const CheckoutPage = () => {
@@ -8,7 +9,10 @@ const CheckoutPage = () => {
     <Container wide={true}>
       <Container>
         <GoBack />
-        <CheckoutForm />
+        <form className={styles.form}>
+          <Checkout />
+          <Summary />
+        </form>
       </Container>
     </Container>
   );

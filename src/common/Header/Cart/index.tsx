@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import CartList from "./CartList";
+import CartList from "../../CartList";
 import styles from "./index.module.scss";
 import { useSelector } from "react-redux";
 import { selectCartProducts, selectTotalPrice } from "../../../store/cartSlice";

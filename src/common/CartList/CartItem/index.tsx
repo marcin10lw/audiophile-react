@@ -3,8 +3,8 @@ import {
   CartProduct,
   decreaseAmount,
   increaseAmount,
-} from "../../../../../store/cartSlice";
-import { formatPrice } from "../../../../../utils/formatPrice";
+} from "../../../store/cartSlice";
+import { formatPrice } from "../../../utils/formatPrice";
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 

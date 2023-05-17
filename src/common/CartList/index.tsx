@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectCartProducts } from "../../../../store/cartSlice";
+import { selectCartProducts } from "../../store/cartSlice";
 import styles from "./index.module.scss";
 import CartItem from "./CartItem";
 
