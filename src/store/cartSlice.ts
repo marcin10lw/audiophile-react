@@ -17,6 +17,7 @@ type InitialStateType = {
   cartProducts: CartProduct[];
   totalAmount: number;
   totalPrice: number;
+  grandTotalPrice: number;
 };
 
 const cartSlice = createSlice({
@@ -76,7 +77,8 @@ const cartSlice = createSlice({
     removeAllProductsFromCart: (state) => {
       state.cartProducts = [];
       state.totalPrice = 0;
-      toast.info("All items have been removed from your cart");
+
+      toast.info("Your cart is empty");
     },
   },
 });

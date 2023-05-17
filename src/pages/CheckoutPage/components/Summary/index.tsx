@@ -1,18 +1,19 @@
-import { useSelector } from "react-redux";
 import CartList from "../../../../common/CartList";
 import styles from "./index.module.scss";
-import { selectTotalPrice } from "../../../../store/cartSlice";
 import { formatPrice } from "../../../../utils/formatPrice";
 import Loader from "./Loader";
 
 type SummaryProps = {
   isSendingData: boolean;
+  grandPriceData: {
+    shippingPrice: number;
+    vatRate: number;
+    totalPrice: number;
+  };
 };
 
-const Summary = ({ isSendingData }: SummaryProps) => {
-  const totalPrice = useSelector(selectTotalPrice);
-  const shippingPrice = 50;
-  const vatRate = 0.2;
+const Summary = ({ isSendingData, grandPriceData }: SummaryProps) => {
+  const { shippingPrice, vatRate, totalPrice } = grandPriceData;
   const vat = totalPrice * vatRate;
   const grandTotal = totalPrice + shippingPrice;
 
