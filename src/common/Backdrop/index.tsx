@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import { MouseEventHandler } from "react";
 
 type BackdropProps = {
-  onClick: MouseEventHandler<HTMLDivElement>;
+  onClick?: MouseEventHandler<HTMLDivElement>;
   showBackDrop: boolean;
 };
 

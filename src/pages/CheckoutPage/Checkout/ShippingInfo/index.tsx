@@ -11,11 +11,12 @@ const ShippingInfo = () => {
           Your Address
         </label>
         <input
-          className={formStyles.input}
-          placeholder="1137 Williams Avenue"
           id="address"
           type="text"
+          name="address"
           required
+          placeholder="1137 Williams Avenue"
+          className={formStyles.input}
         />
       </div>
       <div className={formStyles.gridWrapper}>
@@ -24,13 +25,14 @@ const ShippingInfo = () => {
             ZIP Code
           </label>
           <InputMask
-            className={formStyles.input}
-            placeholder="10001"
             pattern="\d{5}"
             mask="99999"
             id="zip"
             type="text"
+            name="zipCode"
             required
+            placeholder="10001"
+            className={formStyles.input}
           />
           <span className={formStyles.warning}>Wrong format</span>
         </div>
@@ -43,11 +45,12 @@ const ShippingInfo = () => {
             City
           </label>
           <input
-            className={formStyles.input}
-            placeholder="New York"
             id="city"
             type="text"
+            name="city"
             required
+            placeholder="New York"
+            className={formStyles.input}
           />
         </div>
         <div>
@@ -55,11 +58,12 @@ const ShippingInfo = () => {
             Country
           </label>
           <input
-            className={formStyles.input}
-            placeholder="United States"
             id="country"
             type="text"
+            name="country"
             required
+            placeholder="United States"
+            className={formStyles.input}
           />
         </div>
       </div>
