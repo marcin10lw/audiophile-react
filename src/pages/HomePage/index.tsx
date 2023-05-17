@@ -1,11 +1,11 @@
 import CategoryLinks from "../../common/CategoryLinks";
 import Container from "../../common/Container";
-import HomeHero from "./HomeHero";
-import ProductsSection from "./ProductsSection";
+import HomeHero from "./components/HomeHero";
+import ProductsSection from "./components/ProductsSection";
 import GearSection from "../../common/GearSection";
 import Loader from "../../common/Loader";
 import Error from "../../common/Error";
-import { getProducts } from "../../getProducts";
+import { getProducts } from "../../services/getProducts";
 import { useQuery } from "@tanstack/react-query";
 
 const HomePage = () => {

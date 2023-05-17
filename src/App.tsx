@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import Footer from "./common/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "./getProducts";
+import { getProducts } from "./services/getProducts";
 import ProductPage from "./pages/ProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import styles from "./App.module.scss";

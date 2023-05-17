@@ -3,7 +3,7 @@ import "./scss/globals/globalStyle.scss";
 import App from "./App";
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "./store/store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

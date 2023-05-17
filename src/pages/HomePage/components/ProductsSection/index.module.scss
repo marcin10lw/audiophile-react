@@ -1,0 +1,199 @@
+@use "../../../../scss/style.scss" as *;
+
+.productsSection {
+  margin-top: 168px;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 48px;
+
+  @include breakpoint(tablet) {
+    gap: 32px;
+  }
+
+  @include breakpoint(mobile) {
+    gap: 24px;
+  }
+}
+
+.zx9Article {
+  position: relative;
+  padding: 133px 95px 124px 0;
+  color: $white;
+  border-radius: 8px;
+  background: $orange url("./images/desktop/pattern-circles.svg") no-repeat -154px -40px;
+  overflow: hidden;
+
+  @include breakpoint(tabletLarge) {
+    padding: 52px 24px 64px;
+    background: $orange url("./images/desktop/pattern-circles.svg") no-repeat
+      50% 95%;
+  }
+
+  @include breakpoint(mobile) {
+    background-position: 50% -145px;
+    background-size: cover;
+  }
+}
+
+.zx9Article__flex {
+  @include breakpoint(tabletLarge) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+
+  @include breakpoint(tabletLarge) {
+    gap: 32px;
+  }
+}
+
+.zx9Article__image {
+  position: absolute;
+  max-width: 380px;
+  width: 100%;
+  object-fit: contain;
+  bottom: -12px;
+  font-size: 4.6875rem;
+  left: clamp(4.6875rem, -29.0625rem + 50vw, 8.125rem);
+  width: 100%;
+
+  @include breakpoint(tabletLarge) {
+    position: static;
+    max-width: 190px;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 160px;
+  }
+}
+
+.infoWrapper {
+  max-width: 350px;
+  margin-left: auto;
+
+  @include breakpoint(tabletLarge) {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+.zx9Article__name {
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 24px;
+
+  @include breakpoint(mobile) {
+    font-size: 32px;
+    line-height: 40px;
+    max-width: 230px;
+    margin-inline: auto;
+  }
+}
+
+.zx9Article__description {
+  opacity: 0.75;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 40px;
+}
+
+.link {
+  display: inline-block;
+  @include buttonBlack();
+}
+
+.zx7Article {
+  padding: 100px 0 100px 95px;
+  border-radius: 8px;
+  background: center / cover no-repeat
+    url("./images/desktop/image-speaker-zx7.jpg");
+
+  @include breakpoint(tabletLarge) {
+    background: center / cover no-repeat
+      url("./images/tablet/image-speaker-zx7.jpg");
+    padding: 100px 62px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 100px 24px;
+  }
+
+  @include breakpoint(mobileSmall) {
+    background: center / cover no-repeat
+      url("./images/mobile/image-speaker-zx7.jpg");
+  }
+}
+
+.link--transparent {
+  background-color: transparent;
+  border: 1px solid $black;
+  color: black;
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+.article__name {
+  font-weight: 700px;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.yx1Article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @include breakpoint(tablet) {
+    gap: 10px;
+  }
+
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+.yx1Article__image {
+  border-radius: 8px;
+  background: center / cover no-repeat
+    url("./images/desktop/image-earphones-yx1.jpg");
+
+  @include breakpoint(tablet) {
+    background: center / cover no-repeat
+      url("./images/tablet/image-earphones-yx1.jpg");
+  }
+
+  @include breakpoint(mobile) {
+    background: center / cover no-repeat
+      url("./images/mobile/image-earphones-yx1.jpg");
+  }
+}
+
+.yx1Article__info {
+  padding: 100px 0 92px 95px;
+  background-color: $seaShell;
+  border-radius: 8px;
+
+  @include breakpoint(tabletLarge) {
+    padding: 100px 40px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 62px 24px;
+  }
+
+  @include breakpoint(mobileSmall) {
+    padding: 40px 24px;
+  }
+}

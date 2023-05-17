@@ -10,9 +10,9 @@ import CategoryLinks from "../CategoryLinks";
 import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
 import { useMediaQuery } from "@material-ui/core";
-import Cart from "../Cart";
+import Cart from "./Cart";
 import { useSelector } from "react-redux";
-import { selectCartProducts } from "../../cartSlice";
+import { selectCartProducts } from "../../store/cartSlice";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

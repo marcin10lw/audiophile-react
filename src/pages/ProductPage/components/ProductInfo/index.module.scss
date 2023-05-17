@@ -1,0 +1,83 @@
+@use "../../../../scss/style.scss" as *;
+
+.productInfo {
+  display: grid;
+  grid-template-columns: minmax(0, 635px) minmax(0, 350px);
+  gap: 125px;
+  margin-bottom: 160px;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 1fr;
+    gap: 120px;
+  }
+
+  @include breakpoint(mobile) {
+    gap: 88px;
+  }
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+  color: $black;
+
+  @include breakpoint(mobile) {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.86px;
+  }
+}
+
+.productInfo__text {
+  @include description($black);
+  opacity: 0.5;
+  margin-top: 32px;
+  font-family: "Manrope", sans-serif;
+  white-space: break-spaces;
+
+  @include breakpoint(mobile) {
+    margin-top: 24px;
+  }
+}
+
+.box {
+  @include breakpoint(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(mobile) {
+    display: block;
+  }
+}
+
+.box__list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include breakpoint(tablet) {
+    margin-top: 0;
+  }
+
+  @include breakpoint(mobile) {
+    margin-top: 24px;
+  }
+}
+
+.box__item {
+  @include description($black);
+
+  .item {
+    opacity: 0.5;
+    margin-left: 24px;
+  }
+
+  .quantity {
+    color: $orange;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../../../../scss/style.scss" as *;
+
+.products {
+  margin-top: 160px;
+
+  @include breakpoint(tablet) {
+    margin-top: 120px;
+  }
+
+  @include breakpoint(mobile) {
+    margin-top: 64px;
+  }
+}

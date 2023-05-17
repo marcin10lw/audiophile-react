@@ -1,0 +1,23 @@
+@use "../../../../scss/style.scss" as *;
+
+.header {
+  background-color: $black;
+  padding: 96px 0;
+
+  @include breakpoint(tablet) {
+    padding: 105px 0 97px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 32px 0 32px;
+  }
+
+  h1 {
+    text-align: center;
+    @include heading($white);
+
+    @include breakpoint(mobile) {
+      letter-spacing: 2px;
+    }
+  }
+}

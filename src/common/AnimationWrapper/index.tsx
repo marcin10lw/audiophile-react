@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
-import useInViewAnimation from "../../useInViewAnimation";
+import useInViewAnimation from "../../hooks/useInViewAnimation";
 import { useLocation } from "react-router-dom";
 
 const variants = {

@@ -1,0 +1,85 @@
+@use "../../../../../scss/style.scss" as *;
+
+.cartItem {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+}
+
+.cartItem__image {
+  min-width: 40px;
+  max-width: 64px;
+  aspect-ratio: 1 / 1;
+
+  img {
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+.cartItem__info {
+  margin: 0 16px 0;
+  font-weight: 700;
+  line-height: 25px;
+
+  a {
+    color: $black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h5 {
+    font-size: 15px;
+
+    @include breakpoint(mobileSmall) {
+      font-size: 12px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: $black;
+    opacity: 0.5;
+
+    @include breakpoint(mobileSmall) {
+      font-size: 11px;
+    }
+  }
+}
+
+.cartItem__changeAmount {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 96px;
+  height: 32px;
+  margin-left: auto;
+  text-align: center;
+  background-color: $seaShell;
+
+  button {
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17.76px;
+    letter-spacing: 1px;
+    opacity: 0.25;
+
+    &:hover {
+      color: $orange;
+      opacity: 1;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17.76px;
+    letter-spacing: 1px;
+  }
+}

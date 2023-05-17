@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom";
 import CategoryLinks from "../../common/CategoryLinks";
 import Container from "../../common/Container";
 import GearSection from "../../common/GearSection";
-import CategoryHeader from "./CategoryHeader";
+import CategoryHeader from "./components/CategoryHeader";
 import Loader from "../../common/Loader";
-import Products from "./Products";
-import { getProducts } from "../../getProducts";
+import Products from "./components/Products";
+import { getProducts } from "../../services/getProducts";
 import { useQuery } from "@tanstack/react-query";
 
 const CategoryPage = () => {
