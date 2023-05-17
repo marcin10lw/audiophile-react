@@ -1,0 +1,90 @@
+@use "../../../../scss/style.scss" as *;
+
+.confirmation {
+  background-color: $white;
+  padding: 48px;
+  max-width: 540px;
+  width: 100%;
+}
+
+.confirmation__heading {
+  margin-top: 32px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+}
+
+.confirmation__description {
+  @include description($black);
+  opacity: 0.5;
+  margin-top: 24px;
+}
+
+.confirmation__button {
+  @include buttonOrange();
+  width: 100%;
+  margin-top: 48px;
+}
+
+.container {
+  display: flex;
+  border-radius: 8px;
+}
+
+.items {
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+  background-color: $seaShell;
+  padding: 24px 24px 18px;
+}
+
+.items__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #00000014;
+}
+
+.confirmation__grandTotal {
+  max-width: 198px;
+  width: 100%;
+  background-color: black;
+  border-radius: 0 8px 8px 0;
+  color: $white;
+  padding: 42px 32px;
+  display: flex;
+  align-items: flex-end;
+
+  h4 {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24.59px;
+  }
+}
+
+.items__button {
+  display: block;
+  margin: 12px auto 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16.4px;
+  letter-spacing: -0.21px;
+  opacity: 0.5;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

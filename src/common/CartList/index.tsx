@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { selectCartProducts } from "../../store/cartSlice";
 import styles from "./index.module.scss";
-import CartItem from "./CartItem";
+import CartItem from "../CartItem";
 
-const CartList = ({ location }: { location?: string }) => {
+const CartList = ({ location }: { location?: "checkout" }) => {
   const cartProducts = useSelector(selectCartProducts);
 
   return (

@@ -8,6 +8,7 @@ import { selectCartProducts } from "../../store/cartSlice";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fakeSendData } from "../../services/fakeSendData";
+import Confirmation from "./components/Confirmation";
 
 const CheckoutPage = () => {
   const [isSendingData, setIsSendingData] = useState(false);
@@ -52,6 +53,7 @@ const CheckoutPage = () => {
           <Checkout />
           <Summary isSendingData={isSendingData} />
         </form>
+        <Confirmation />
       </Container>
     </Container>
   );
