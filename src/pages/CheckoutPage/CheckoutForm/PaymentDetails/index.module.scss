@@ -1,0 +1,98 @@
+@use "../../../../scss/style.scss" as *;
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paymentLabel {
+  @include breakpoint(mobile) {
+    margin-bottom: 16px;
+  }
+}
+
+.eMoney {
+  @extend .paymentGrid;
+  margin-top: 24px;
+  gap: 16px;
+
+  @include breakpoint(mobile) {
+    margin-top: 32px;
+    gap: 24px;
+  }
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.radioWrapper {
+  position: relative;
+}
+
+.radioLabel {
+  @include input;
+  padding-left: 52px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $orange;
+  }
+}
+
+.radioInput {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  font: inherit;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    border-radius: 50%;
+    background-color: $orange;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:checked + .radioLabel {
+    border: 1px solid $orange;
+  }
+}
+
+.cashOnDelivery {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 30px;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  p {
+    @include description($black);
+    opacity: 0.5;
+  }
+}

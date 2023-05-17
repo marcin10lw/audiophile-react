@@ -1,0 +1,12 @@
+@use "../../../../scss/style.scss" as *;
+
+.shippingInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 60px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 32px;
+  }
+}

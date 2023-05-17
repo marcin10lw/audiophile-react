@@ -50,25 +50,6 @@
   color: $orange;
 }
 
-.billing {
-  margin-bottom: 52px;
-
-  @include breakpoint(mobile) {
-    margin-bottom: 32px;
-  }
-}
-
-.shippingInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-bottom: 60px;
-
-  @include breakpoint(mobile) {
-    margin-bottom: 32px;
-  }
-}
-
 .label {
   @include label;
 }
@@ -104,53 +85,5 @@
 
   &:invalid {
     outline: 2px solid $red;
-  }
-}
-
-.radioWrapper {
-  position: relative;
-}
-
-.radioLabel {
-  @include input;
-  padding-left: 52px;
-  cursor: pointer;
-
-  &:hover {
-    border: 1px solid $orange;
-  }
-}
-
-.radioInput {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 16px;
-  appearance: none;
-  background-color: transparent;
-  margin: 0;
-  font: inherit;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #cfcfcf;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-
-  &::before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    transform: scale(0);
-    border-radius: 50%;
-    background-color: $orange;
-  }
-
-  &:checked::before {
-    transform: scale(1);
-  }
-
-  &:checked + .radioLabel {
-    border: 1px solid $orange;
   }
 }

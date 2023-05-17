@@ -1,0 +1,9 @@
+@use "../../../../scss/style.scss" as *;
+
+.billing {
+  margin-bottom: 52px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 32px;
+  }
+}
