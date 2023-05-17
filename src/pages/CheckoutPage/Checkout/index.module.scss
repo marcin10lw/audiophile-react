@@ -12,8 +12,6 @@
 }
 
 .checkout {
-  max-width: 730px;
-  width: 100%;
   padding: 48px;
   border-radius: 8px;
   background-color: $white;
@@ -52,6 +50,10 @@
 
 .label {
   @include label;
+
+  &:has(+ .input:focus:invalid) {
+    color: $red;
+  }
 }
 
 .inputWrapper {
@@ -69,10 +71,6 @@
   line-height: 16.4px;
   letter-spacing: -0.21px;
   margin-left: auto;
-
-  &:has(+ .input:invalid) {
-    display: block;
-  }
 }
 
 .input {
@@ -83,7 +81,11 @@
     caret-color: $orange;
   }
 
-  &:invalid {
+  &:focus:invalid {
     outline: 2px solid $red;
+  }
+
+  &:focus:invalid + .warning {
+    display: block;
   }
 }

@@ -9,35 +9,20 @@ const ShippingInfo = () => {
         <label className={formStyles.label} htmlFor="address">
           Address
         </label>
-        <input
-          className={formStyles.input}
-          id="address"
-          type="text"
-          aria-required
-        />
+        <input className={formStyles.input} id="address" type="text" required />
       </div>
       <div className={formStyles.gridWrapper}>
         <div>
           <label className={formStyles.label} htmlFor="zip">
             ZIP Code
           </label>
-          <input
-            className={formStyles.input}
-            id="zip"
-            type="text"
-            aria-required
-          />
+          <input className={formStyles.input} id="zip" type="text" required />
         </div>
         <div>
           <label className={formStyles.label} htmlFor="city">
             City
           </label>
-          <input
-            className={formStyles.input}
-            id="city"
-            type="text"
-            aria-required
-          />
+          <input className={formStyles.input} id="city" type="text" required />
         </div>
         <div>
           <label className={formStyles.label} htmlFor="country">
@@ -47,7 +32,7 @@ const ShippingInfo = () => {
             className={formStyles.input}
             id="country"
             type="text"
-            aria-required
+            required
           />
         </div>
       </div>

@@ -24,7 +24,6 @@ const Summary = () => {
         </p>
       </div>
       <button className={styles.summary__button} type="submit">
-        {" "}
         CONTINUE & PAY
       </button>
     </section>

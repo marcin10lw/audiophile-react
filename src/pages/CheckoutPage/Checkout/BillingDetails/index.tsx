@@ -10,35 +10,25 @@ const BillingDetails = () => {
           <label className={formStyles.label} htmlFor="name">
             Name
           </label>
-          <input
-            className={formStyles.input}
-            id="name"
-            type="text"
-            aria-required
-          />
+          <input className={formStyles.input} id="name" type="text" required />
         </div>
         <div className={formStyles.inputWrapper}>
           <label className={formStyles.label} htmlFor="email">
             Email Address
           </label>
-          <span className={formStyles.warning}>Wrong format</span>
           <input
             className={formStyles.input}
             id="email"
             type="email"
-            aria-required
+            required
           />
+          <span className={formStyles.warning}>Wrong format</span>
         </div>
         <div>
           <label className={formStyles.label} htmlFor="tel">
             Phone Number
           </label>
-          <input
-            className={formStyles.input}
-            id="tel"
-            type="tel"
-            aria-required
-          />
+          <input className={formStyles.input} id="tel" type="tel" required />
         </div>
       </div>
     </fieldset>

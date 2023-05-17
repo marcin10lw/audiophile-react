@@ -6,4 +6,8 @@
 
 .main--checkout {
   background-color: $seaShell;
+
+  @include breakpoint(tablet) {
+    background-color: $alabaster;
+  }
 }

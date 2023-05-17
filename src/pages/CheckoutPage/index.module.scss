@@ -1,7 +1,19 @@
 @use "../../scss/style.scss" as *;
 
 .form {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 730px) minmax(0, 350px);
   gap: 30px;
   align-items: flex-start;
+  padding-bottom: 140px;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 116px;
+  }
+
+  @include breakpoint(mobile) {
+    padding-bottom: 96px;
+  }
 }

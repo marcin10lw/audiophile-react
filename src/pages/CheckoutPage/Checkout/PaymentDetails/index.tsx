@@ -5,7 +5,6 @@ import cashOnDeliveryIcon from "./icon-cash-on-delivery.svg";
 
 const PaymentDetails = () => {
   const [paymentMethod, setPaymentMethod] = useState("eMoney");
-  console.log(paymentMethod);
 
   return (
     <fieldset>
@@ -55,6 +54,7 @@ const PaymentDetails = () => {
             <input
               id="eMoneyNumber"
               name="eMoneyNumber"
+              required={paymentMethod === "eMoney"}
               className={formStyles.input}
             />
           </div>
@@ -66,6 +66,7 @@ const PaymentDetails = () => {
             <input
               id="eMoneyPin"
               name="eMoneyPin"
+              required={paymentMethod === "eMoney"}
               className={formStyles.input}
             />
           </div>
