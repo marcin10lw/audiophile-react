@@ -51,7 +51,7 @@
 .label {
   @include label;
 
-  &:has(+ .input:focus:invalid) {
+  &:has(+ .input:focus:not(:placeholder-shown):invalid) {
     color: $red;
   }
 }
@@ -81,11 +81,11 @@
     caret-color: $orange;
   }
 
-  &:focus:invalid {
+  &:focus:not(:placeholder-shown):invalid {
     outline: 2px solid $red;
   }
 
-  &:focus:invalid + .warning {
+  &:focus:not(:placeholder-shown):invalid + .warning {
     display: block;
   }
 }

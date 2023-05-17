@@ -20,6 +20,8 @@ const CheckoutPage = () => {
 
   const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    console.log("submited")
   };
 
   return (

@@ -2,6 +2,7 @@ import { useState } from "react";
 import formStyles from "../index.module.scss";
 import styles from "./index.module.scss";
 import cashOnDeliveryIcon from "./icon-cash-on-delivery.svg";
+import InputMask from "react-input-mask";
 
 const PaymentDetails = () => {
   const [paymentMethod, setPaymentMethod] = useState("eMoney");
@@ -47,28 +48,36 @@ const PaymentDetails = () => {
       </div>
       {paymentMethod === "eMoney" ? (
         <div className={styles.eMoney}>
-          <div>
+          <div className={formStyles.inputWrapper}>
             <label htmlFor="eMoneyNumber" className={formStyles.label}>
               e-Money Number
             </label>
-            <input
+            <InputMask
+              pattern="\d{9}"
+              mask="999999999"
               id="eMoneyNumber"
               name="eMoneyNumber"
               required={paymentMethod === "eMoney"}
               className={formStyles.input}
+              placeholder="238521993"
             />
+            <span className={formStyles.warning}>Wrong format</span>
           </div>
 
-          <div>
+          <div className={formStyles.inputWrapper}>
             <label htmlFor="eMoneyPin" className={formStyles.label}>
               e-Money PIN
             </label>
-            <input
+            <InputMask
+              pattern="\d{4}"
+              mask="9999"
               id="eMoneyPin"
               name="eMoneyPin"
               required={paymentMethod === "eMoney"}
+              placeholder="6891"
               className={formStyles.input}
             />
+            <span className={formStyles.warning}>Wrong format</span>
           </div>
         </div>
       ) : (

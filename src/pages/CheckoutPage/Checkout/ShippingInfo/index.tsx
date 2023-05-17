@@ -1,5 +1,6 @@
 import formStyles from "../index.module.scss";
 import styles from "./index.module.scss";
+import InputMask from "react-input-mask";
 
 const ShippingInfo = () => {
   return (
@@ -7,22 +8,47 @@ const ShippingInfo = () => {
       <legend className={formStyles.legend}>SHIPPING INFO</legend>
       <div>
         <label className={formStyles.label} htmlFor="address">
-          Address
+          Your Address
         </label>
-        <input className={formStyles.input} id="address" type="text" required />
+        <input
+          className={formStyles.input}
+          placeholder="1137 Williams Avenue"
+          id="address"
+          type="text"
+          required
+        />
       </div>
       <div className={formStyles.gridWrapper}>
-        <div>
+        <div className={formStyles.inputWrapper}>
           <label className={formStyles.label} htmlFor="zip">
             ZIP Code
           </label>
-          <input className={formStyles.input} id="zip" type="text" required />
+          <InputMask
+            className={formStyles.input}
+            placeholder="10001"
+            pattern="\d{5}"
+            mask="99999"
+            id="zip"
+            type="text"
+            required
+          />
+          <span className={formStyles.warning}>Wrong format</span>
         </div>
         <div>
-          <label className={formStyles.label} htmlFor="city">
+          <label
+            className={formStyles.label}
+            placeholder="New York"
+            htmlFor="city"
+          >
             City
           </label>
-          <input className={formStyles.input} id="city" type="text" required />
+          <input
+            className={formStyles.input}
+            placeholder="New York"
+            id="city"
+            type="text"
+            required
+          />
         </div>
         <div>
           <label className={formStyles.label} htmlFor="country">
@@ -30,6 +56,7 @@ const ShippingInfo = () => {
           </label>
           <input
             className={formStyles.input}
+            placeholder="United States"
             id="country"
             type="text"
             required
