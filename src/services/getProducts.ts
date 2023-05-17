@@ -1,11 +1,7 @@
 import { QueryFunction } from "@tanstack/react-query";
 import axios from "axios";
 import { ProductAPIResponse } from "../fakeAPIResponseTypes";
-
-const wait = (exampleDelay: number) =>
-  new Promise((resolve) => {
-    setTimeout(resolve, exampleDelay);
-  });
+import { wait } from "@testing-library/user-event/dist/utils";
 
 export const getProducts: QueryFunction<
   ProductAPIResponse,

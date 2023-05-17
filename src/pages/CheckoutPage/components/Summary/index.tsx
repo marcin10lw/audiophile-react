@@ -1,10 +1,15 @@
 import { useSelector } from "react-redux";
-import CartList from "../../../common/CartList";
+import CartList from "../../../../common/CartList";
 import styles from "./index.module.scss";
-import { selectTotalPrice } from "../../../store/cartSlice";
-import { formatPrice } from "../../../utils/formatPrice";
+import { selectTotalPrice } from "../../../../store/cartSlice";
+import { formatPrice } from "../../../../utils/formatPrice";
+import Loader from "./Loader";
 
-const Summary = () => {
+type SummaryProps = {
+  isSendingData: boolean;
+};
+
+const Summary = ({ isSendingData }: SummaryProps) => {
   const totalPrice = useSelector(selectTotalPrice);
   const shippingPrice = 50;
   const vatRate = 0.2;
@@ -32,8 +37,12 @@ const Summary = () => {
           <span>GRAND TOTAL</span>$ {formatPrice(grandTotal)}
         </p>
       </div>
-      <button className={styles.summary__button} type="submit">
-        CONTINUE & PAY
+      <button
+        disabled={isSendingData}
+        className={styles.summary__button}
+        type="submit"
+      >
+        {isSendingData ? <Loader /> : "CONTINUE & PAY"}
       </button>
     </section>
   );

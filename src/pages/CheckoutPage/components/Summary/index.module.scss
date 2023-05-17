@@ -1,4 +1,4 @@
-@use "../../../scss/style.scss" as *;
+@use "../../../../scss/style.scss" as *;
 
 .summary {
   background-color: $white;
@@ -50,6 +50,16 @@
 
 .summary__button {
   @include buttonOrange();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 48px;
   width: 100%;
   margin-top: 32px;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: $lightOrange;
+  }
 }
