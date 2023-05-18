@@ -44,7 +44,7 @@ const Header = () => {
             <Hamburger />
           </button>
 
-          <Link to="home" className={styles.header__logo}>
+          <Link to="/home" className={styles.header__logo}>
             <Logo />
           </Link>
 
@@ -74,6 +74,7 @@ const Header = () => {
           <button
             onClick={() => setIsCartOpen((isCartOpen) => !isCartOpen)}
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
+            aria-label="toggle cart"
           >
             <CartIcon />
             {!!cartProducts.length && (

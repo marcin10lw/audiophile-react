@@ -36,17 +36,17 @@ const Footer = () => {
             </p>
             <ul className={styles.footer__icons}>
               <li>
-                <a href="" target="_blank" rel="noreferrer noopener">
+                <a href="/#" target="_blank" rel="noreferrer noopener">
                   <Facebook />
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" rel="noreferrer noopener">
+                <a href="/#" target="_blank" rel="noreferrer noopener">
                   <Twitter />
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" rel="noreferrer noopener">
+                <a href="/#" target="_blank" rel="noreferrer noopener">
                   <Instagram />
                 </a>
               </li>
