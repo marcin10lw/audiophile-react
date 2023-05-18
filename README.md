@@ -1,50 +1,77 @@
-# Development in progress...
+# Marcin Augun - Augiophile e-commerce
 
-## Check out the [Demo](https://marcin10lw.github.io/audiophile-react/)
+This is a frontend portfolio project I worked on based on a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). The goal was to create a multi-page e-commerce website and make it visually match the provided design as closely as possible.
 
-## Getting Started with Create React App
+## Check out the [Demo!](https://marcin10lw.github.io/audiophile-react/)👈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+The project is an e-commerce website where users can browse products, add them to the cart, and complete the checkout process. It provides a responsive layout, interactive elements, and features such as product management, cart functionality, and form validation. After checkout, users receive an order confirmation modal.
 
-In the project directory, you can run:
+## Problem Solved
 
-### `npm start`
+This project demonstrates my frontend development skills in building a visually appealing and functional e-commerce website with a seamless user experience. It showcases my ability to implement responsive designs, interactive features, and a smooth checkout process.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 💻 Project Tech Stack:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![react](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+![typescript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![reactrouter](https://img.shields.io/badge/React%20Router-CA4245.svg?style=for-the-badge&logo=React-Router&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white)
+![Redux-saga](https://img.shields.io/badge/Redux--Saga-999999.svg?style=for-the-badge&logo=Redux-Saga&logoColor=white)
+![react query](https://img.shields.io/badge/React%20Query-FF4154.svg?style=for-the-badge&logo=React-Query&logoColor=white)
+![axios](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699.svg?style=for-the-badge&logo=Sass&logoColor=white)
+![framer motion](https://img.shields.io/badge/Framer--Motion-0055FF.svg?style=for-the-badge&logo=Framer&logoColor=white)
+![create react app](https://img.shields.io/badge/Create%20React%20App-09D3AC.svg?style=for-the-badge&logo=Create-React-App&logoColor=white)
+![webpack](https://img.shields.io/badge/Webpack-8DD6F9.svg?style=for-the-badge&logo=Webpack&logoColor=black)
+![babel](https://img.shields.io/badge/Babel-F9DC3E.svg?style=for-the-badge&logo=Babel&logoColor=black)
+![normalize](https://img.shields.io/badge/Normalize.css-E3695F.svg?style=for-the-badge&logo=normalizedotcss&logoColor=white)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository to your local machine using the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone <repository_url>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd audiophile-react
+```
 
-### `npm run eject`
+3. Install the project dependencies using npm or yarn:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+yarn install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Start the development server:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+or
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn start
+```
+
+5. Open your browser and visit http://localhost:3000 to view the website.
+
+Now you can explore the e-commerce website locally and interact with its features.
+
+## Conclusion
+
+This project demonstrates my proficiency in building a frontend e-commerce website with a responsive design, interactive elements, and a smooth checkout process. Feel free to explore and customize the project according to your needs. If you have any questions or need further assistance, please don't hesitate to reach out.
