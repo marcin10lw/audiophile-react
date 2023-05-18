@@ -20,7 +20,7 @@ const Footer = () => {
       <Container>
         <div className={styles.footerWrapper}>
           <div className={styles.flexWrapper}>
-            <Link to="/home" className={styles.footer__logo}>
+            <Link to="/home" className={styles.footer__logo} aria-label="go back to home page">
               <Logo />
             </Link>
             <nav>
@@ -36,17 +36,17 @@ const Footer = () => {
             </p>
             <ul className={styles.footer__icons}>
               <li>
-                <a href="/#" target="_blank" rel="noreferrer noopener">
+                <a href="/#" target="_blank" rel="noreferrer noopener" aria-label="visit out facebook">
                   <Facebook />
                 </a>
               </li>
               <li>
-                <a href="/#" target="_blank" rel="noreferrer noopener">
+                <a href="/#" target="_blank" rel="noreferrer noopener" aria-label="visit out twitter">
                   <Twitter />
                 </a>
               </li>
               <li>
-                <a href="/#" target="_blank" rel="noreferrer noopener">
+                <a href="/#" target="_blank" rel="noreferrer noopener" aria-label="visit out instagram">
                   <Instagram />
                 </a>
               </li>

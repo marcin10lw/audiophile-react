@@ -44,7 +44,7 @@ const Header = () => {
             <Hamburger />
           </button>
 
-          <Link to="/home" className={styles.header__logo}>
+          <Link to="/home" className={styles.header__logo} aria-label="go back to home page">
             <Logo />
           </Link>
 
