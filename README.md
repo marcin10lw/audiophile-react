@@ -28,6 +28,24 @@ This project demonstrates my frontend development skills in building a visually 
 ![babel](https://img.shields.io/badge/Babel-F9DC3E.svg?style=for-the-badge&logo=Babel&logoColor=black)
 ![normalize](https://img.shields.io/badge/Normalize.css-E3695F.svg?style=for-the-badge&logo=normalizedotcss&logoColor=white)
 
+## Page preview
+
+### Home page
+
+![](/audiophile-homepage.gif)
+
+### Category page
+
+![](/audiophile-category.gif)
+
+### Product page
+
+![](/audiophile-product.gif)
+
+### Checkout page
+
+![](/audiophile-checkout.gif)
+
 ## Getting Started
 
 To run this project locally, follow these steps:
@@ -35,7 +53,7 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/marcin10lw/audiophile-react
 ```
 
 2. Navigate to the project directory:
