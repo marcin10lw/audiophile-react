@@ -27,7 +27,7 @@ const GearSection = () => {
         </article>
       </AnimationWrapper>
       <div>
-        <img className={styles.section__image} alt="best gear" />
+        <div className={styles.section__image} />
       </div>
     </section>
   );
