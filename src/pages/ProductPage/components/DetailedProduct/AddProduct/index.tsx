@@ -16,7 +16,7 @@ const AddProduct = ({ product }: AddProductProps) => {
   const onAddProduct = () => {
     dispatch(
       addProduct({
-        image: product.image.mobile,
+        image: `/assets/cart/image-${product.slug}.jpg`,
         name: product.name,
         price: product.price,
         amount: productAmount,
