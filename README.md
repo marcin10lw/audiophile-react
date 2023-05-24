@@ -2,7 +2,7 @@
 
 This is a frontend portfolio project I worked on based on a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). The goal was to create a multi-page e-commerce website and make it visually match the provided design as closely as possible.
 
-## Check out the [Demo!](https://marcin10lw.github.io/audiophile-react/)👈
+## Live Site URL: [marcin10lw.github.io/audiophile-react](https://marcin10lw.github.io/audiophile-react/)
 
 ## Project Description
 
