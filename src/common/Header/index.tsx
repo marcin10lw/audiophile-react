@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
 import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CategoryLinks from "../CategoryLinks";
 import { menuVariants } from "./variants";
 import Backdrop from "../Backdrop";
@@ -17,6 +17,8 @@ import { selectCartProducts } from "../../store/cartSlice";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const cartButtonRef = useRef<HTMLButtonElement>(null);
+
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
   const cartProducts = useSelector(selectCartProducts);
@@ -44,7 +46,11 @@ const Header = () => {
             <Hamburger />
           </button>
 
-          <Link to="/home" className={styles.header__logo} aria-label="go back to home page">
+          <Link
+            to="/home"
+            className={styles.header__logo}
+            aria-label="go back to home page"
+          >
             <Logo />
           </Link>
 
@@ -72,6 +78,7 @@ const Header = () => {
           </nav>
 
           <button
+            ref={cartButtonRef}
             onClick={() => setIsCartOpen((isCartOpen) => !isCartOpen)}
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
             aria-label="toggle cart"
@@ -85,7 +92,11 @@ const Header = () => {
           </button>
         </div>
 
-        <Cart showCart={isCartOpen} closeCart={closeCart} />
+        <Cart
+          showCart={isCartOpen}
+          closeCart={closeCart}
+          buttonRef={cartButtonRef}
+        />
       </header>
       <Backdrop
         onClick={() => setIsCartOpen(false)}

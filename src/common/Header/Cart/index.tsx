@@ -4,17 +4,19 @@ import styles from "./index.module.scss";
 import { useSelector } from "react-redux";
 import { selectCartProducts, selectTotalPrice } from "../../../store/cartSlice";
 import { formatPrice } from "../../../utils/formatPrice";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Warning from "./Warning";
 import { useNavigate } from "react-router-dom";
 
 type CartProps = {
   showCart: boolean;
   closeCart: () => void;
+  buttonRef: React.RefObject<HTMLButtonElement>;
 };
 
-const Cart = ({ showCart, closeCart }: CartProps) => {
+const Cart = ({ showCart, closeCart, buttonRef }: CartProps) => {
   const [showWarning, setShowWarning] = useState(false);
+  const cartRef = useRef<HTMLElement>(null);
 
   const cartProducts = useSelector(selectCartProducts);
   const totalPrice = useSelector(selectTotalPrice);
@@ -26,10 +28,28 @@ const Cart = ({ showCart, closeCart }: CartProps) => {
     closeCart();
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        !cartRef.current?.contains(event.target as Node) &&
+        !buttonRef.current?.contains(event.target as Node)
+      ) {
+        closeCart();
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <AnimatePresence>
       {showCart && (
         <motion.section
+          ref={cartRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
