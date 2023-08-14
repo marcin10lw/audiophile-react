@@ -5,7 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Warning from "./Warning";
 import CartList from "common/CartList";
-import { selectCartProducts, selectTotalPrice } from "store/cartSlice";
+import {
+  selectCartProducts,
+  selectTotalAmount,
+  selectTotalPrice,
+} from "store/cartSlice";
 import { formatPrice } from "utils/formatPrice";
 import styles from "./index.module.scss";
 
@@ -21,6 +25,7 @@ const Cart = ({ showCart, closeCart, buttonRef }: CartProps) => {
 
   const cartProducts = useSelector(selectCartProducts);
   const totalPrice = useSelector(selectTotalPrice);
+  const totalAmount = useSelector(selectTotalAmount);
   const formatedPrice = formatPrice(totalPrice);
   const navigate = useNavigate();
 
@@ -61,12 +66,12 @@ const Cart = ({ showCart, closeCart, buttonRef }: CartProps) => {
           <Warning showWarning={showWarning} setShowWarning={setShowWarning} />
 
           <header className={styles.cart__header}>
-            <h4>CART ({cartProducts.length})</h4>
+            <h4>CART ({totalAmount})</h4>
             {!!cartProducts.length && (
               <button onClick={() => setShowWarning(true)}>Remove all</button>
             )}
           </header>
-          {cartProducts.length ? (
+          {!!cartProducts.length ? (
             <CartList />
           ) : (
             <p className={styles.cart__message}>Your Cart is Empty</p>

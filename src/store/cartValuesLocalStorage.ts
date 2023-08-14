@@ -3,6 +3,7 @@ import { CartProduct } from "./cartSlice";
 type LocalStorageValueType = {
   cartProducts: CartProduct[] | [];
   totalPrice: number;
+  totalAmount: number;
 };
 
 export const getCartValueFromLocalStorage = (): LocalStorageValueType => {
@@ -12,6 +13,7 @@ export const getCartValueFromLocalStorage = (): LocalStorageValueType => {
     return {
       cartProducts: [],
       totalPrice: 0,
+      totalAmount: 0,
     };
   }
 
@@ -21,6 +23,7 @@ export const getCartValueFromLocalStorage = (): LocalStorageValueType => {
 export const saveCartValueToLocalStorage = (value: {
   cartProducts: CartProduct[];
   totalPrice: number;
+  totalAmount: number;
 }) => {
   localStorage.setItem("cart", JSON.stringify(value));
 };

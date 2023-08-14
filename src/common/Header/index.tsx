@@ -12,7 +12,7 @@ import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
 import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
 import { menuVariants } from "./variants";
-import { selectCartProducts } from "store/cartSlice";
+import { selectCartProducts, selectTotalAmount } from "store/cartSlice";
 import styles from "./index.module.scss";
 
 const Header = () => {
@@ -23,6 +23,7 @@ const Header = () => {
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
   const cartProducts = useSelector(selectCartProducts);
+  const totalAmount = useSelector(selectTotalAmount);
 
   const closeCart = () => {
     setIsCartOpen(false);
@@ -86,9 +87,7 @@ const Header = () => {
           >
             <CartIcon />
             {!!cartProducts.length && (
-              <span className={styles.productsAmount}>
-                {cartProducts.length}
-              </span>
+              <span className={styles.productsAmount}>{totalAmount}</span>
             )}
           </button>
         </div>

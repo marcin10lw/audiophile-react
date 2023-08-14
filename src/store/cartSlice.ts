@@ -18,7 +18,6 @@ type InitialStateType = {
   cartProducts: CartProduct[];
   totalAmount: number;
   totalPrice: number;
-  grandTotalPrice: number;
 };
 
 const cartSlice = createSlice({
@@ -44,27 +43,27 @@ const cartSlice = createSlice({
       }
 
       state.totalPrice += amount * price;
+      state.totalAmount += 1;
     },
     decreaseAmount: (state, { payload: id }: { payload: number }) => {
       const existingProduct = state.cartProducts.find(
         (product) => product.id === id
       );
 
-      if (existingProduct?.amount === 1) {
-        state.cartProducts = state.cartProducts.filter(
-          (product) => product.id !== id
-        );
-        toast.info(
-          `${existingProduct.name.toLocaleUpperCase()} was removed from cart`
-        );
-      } else {
-        existingProduct!.amount -= 1;
-      }
+      if (existingProduct) {
+        if (existingProduct.amount === 1) {
+          state.cartProducts = state.cartProducts.filter(
+            (product) => product.id !== id
+          );
+          toast.info(
+            `${existingProduct.name.toLocaleUpperCase()} was removed from cart`
+          );
+        } else {
+          existingProduct.amount -= 1;
+        }
 
-      if (state.totalPrice === 0) {
-        return;
-      } else {
-        state.totalPrice -= existingProduct!.price;
+        state.totalPrice -= existingProduct.price;
+        state.totalAmount -= 1;
       }
     },
     increaseAmount: (state, { payload: id }: { payload: number }) => {
@@ -72,12 +71,16 @@ const cartSlice = createSlice({
         (product) => product.id === id
       );
 
-      existingProduct!.amount += 1;
-      state.totalPrice += existingProduct!.price;
+      if (existingProduct) {
+        existingProduct.amount += 1;
+        state.totalPrice += existingProduct.price;
+        state.totalAmount += 1;
+      }
     },
     removeAllProductsFromCart: (state) => {
       state.cartProducts = [];
       state.totalPrice = 0;
+      state.totalAmount = 0;
 
       toast.info("Your cart is empty");
     },
