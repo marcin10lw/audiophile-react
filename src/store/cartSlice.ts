@@ -24,7 +24,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cartProducts: getCartValueFromLocalStorage().cartProducts,
-    totalAmount: 0,
+    totalAmount: getCartValueFromLocalStorage().totalAmount,
     totalPrice: getCartValueFromLocalStorage().totalPrice,
   } as InitialStateType,
   reducers: {
