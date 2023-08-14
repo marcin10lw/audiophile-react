@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useMediaQuery } from "@material-ui/core";
-import { motion } from "framer-motion";
 
 import Cart from "./Cart";
 import Backdrop from "common/Backdrop";
@@ -11,7 +9,6 @@ import CategoryLinks from "common/CategoryLinks";
 import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
 import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
-import { menuVariants } from "./variants";
 import { selectCartProducts, selectTotalAmount } from "store/cartSlice";
 import styles from "./index.module.scss";
 
@@ -20,7 +17,6 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const { pathname } = useLocation();
-  const matches = useMediaQuery("(max-width: 940px");
   const cartProducts = useSelector(selectCartProducts);
   const totalAmount = useSelector(selectTotalAmount);
 
@@ -55,27 +51,18 @@ const Header = () => {
             <Logo />
           </Link>
 
-          <nav
-            className={styles.nav}
-            style={{
-              pointerEvents: isMenuOpen ? "auto" : matches ? "none" : "auto",
-            }}
-          >
+          <nav>
             <div className={styles.nav__list}>
               <NavigationList />
             </div>
 
-            <motion.div
-              initial={false}
-              variants={menuVariants}
-              style={{
-                pointerEvents: isMenuOpen ? "auto" : "none",
-              }}
-              animate={isMenuOpen ? "open" : "closed"}
-              className={styles.nav__categories}
+            <div
+              className={`${styles.nav__categories} ${
+                isMenuOpen ? styles["nav__categories--open"] : ""
+              }`}
             >
               <CategoryLinks onClick={() => setIsMenuOpen(false)} />
-            </motion.div>
+            </div>
           </nav>
 
           <button

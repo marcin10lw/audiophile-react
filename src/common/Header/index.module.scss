@@ -42,15 +42,6 @@
   }
 }
 
-.nav {
-  @include breakpoint(tablet) {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
-}
-
 .nav__list {
   @include breakpoint(tablet) {
     display: none;
@@ -62,9 +53,23 @@
 
   @include breakpoint(tablet) {
     display: block;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
     border-radius: 0 0 7px 7px;
     background-color: $white;
     padding: 56px 40px 67px;
+    transition: opacity 100ms ease-in-out, visibility 100ms ease-in-out;
+  }
+}
+
+.nav__categories--open {
+  @include breakpoint(tablet) {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
