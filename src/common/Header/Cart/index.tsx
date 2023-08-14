@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -16,12 +16,10 @@ import styles from "./index.module.scss";
 type CartProps = {
   showCart: boolean;
   closeCart: () => void;
-  buttonRef: React.RefObject<HTMLButtonElement>;
 };
 
-const Cart = ({ showCart, closeCart, buttonRef }: CartProps) => {
+const Cart = ({ showCart, closeCart }: CartProps) => {
   const [showWarning, setShowWarning] = useState(false);
-  const cartRef = useRef<HTMLElement>(null);
 
   const cartProducts = useSelector(selectCartProducts);
   const totalPrice = useSelector(selectTotalPrice);
@@ -34,30 +32,10 @@ const Cart = ({ showCart, closeCart, buttonRef }: CartProps) => {
     closeCart();
   };
 
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        !cartRef.current?.contains(event.target as Node) &&
-        !buttonRef.current?.contains(event.target as Node)
-      ) {
-        closeCart();
-      }
-    };
-
-    document.addEventListener("click", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <AnimatePresence>
       {showCart && (
         <motion.section
-          ref={cartRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

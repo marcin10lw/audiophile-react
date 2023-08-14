@@ -43,7 +43,7 @@ const cartSlice = createSlice({
       }
 
       state.totalPrice += amount * price;
-      state.totalAmount += 1;
+      state.totalAmount += amount;
     },
     decreaseAmount: (state, { payload: id }: { payload: number }) => {
       const existingProduct = state.cartProducts.find(

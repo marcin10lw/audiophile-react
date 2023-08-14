@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "@material-ui/core";
@@ -18,7 +18,6 @@ import styles from "./index.module.scss";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const cartButtonRef = useRef<HTMLButtonElement>(null);
 
   const { pathname } = useLocation();
   const matches = useMediaQuery("(max-width: 940px");
@@ -80,7 +79,6 @@ const Header = () => {
           </nav>
 
           <button
-            ref={cartButtonRef}
             onClick={() => setIsCartOpen((isCartOpen) => !isCartOpen)}
             className={`${styles.header__button} ${styles["header__button--cart"]}`}
             aria-label="toggle cart"
@@ -92,11 +90,7 @@ const Header = () => {
           </button>
         </div>
 
-        <Cart
-          showCart={isCartOpen}
-          closeCart={closeCart}
-          buttonRef={cartButtonRef}
-        />
+        <Cart showCart={isCartOpen} closeCart={closeCart} />
       </header>
       <Backdrop
         onClick={() => setIsCartOpen(false)}
