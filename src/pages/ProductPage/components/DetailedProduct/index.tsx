@@ -19,14 +19,13 @@ const DetailedProduct = ({ product }: ProductProps) => {
   const formattedPrice = formatPrice(product.price);
 
   return (
-    <motion.section
-      ref={ref}
-      variants={productVariants}
-      initial="hidden"
-      animate={animation}
-      className={styles.product}
-    >
-      <div className={styles.image__wrapper}>
+    <motion.section className={styles.product}>
+      <motion.div
+        ref={ref}
+        variants={productVariants}
+        initial="hidden"
+        animate={animation}
+      >
         <img
           className={styles.product__image}
           draggable={false}
@@ -34,7 +33,7 @@ const DetailedProduct = ({ product }: ProductProps) => {
           alt={product.name}
           onLoad={() => setImageLoaded(true)}
         />
-      </div>
+      </motion.div>
       {!imageLoaded && <div className={styles.image__placeholder} />}
 
       <article className={styles.product__info}>
