@@ -1,19 +1,17 @@
-import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
-import useInViewAnimation from "../../hooks/useInViewAnimation";
-import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import useInViewAnimation from "hooks/useInViewAnimation";
 
 const variants = {
   hidden: {
     opacity: 0,
-    y: 30,
   },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
       delay: 0.15,
-      duration: 0.8,
+      duration: 0.6,
       ease: "easeInOut",
     },
   },

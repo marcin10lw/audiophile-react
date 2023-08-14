@@ -1,5 +1,5 @@
-import { useAnimation, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
+import { useAnimation, useInView } from "framer-motion";
 
 const useInViewAnimation = (threshold: number) => {
   const ref = useRef(null);

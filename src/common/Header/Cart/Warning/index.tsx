@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
-import styles from "./index.module.scss";
 import { useDispatch } from "react-redux";
-import { removeAllProductsFromCart } from "../../../../store/cartSlice";
+import { motion } from "framer-motion";
+
+import { removeAllProductsFromCart } from "store/cartSlice";
+import styles from "./index.module.scss";
 
 type WarningProps = {
   showWarning: boolean;

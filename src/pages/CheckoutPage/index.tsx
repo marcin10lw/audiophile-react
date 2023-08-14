@@ -1,20 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import Container from "../../common/Container";
-import GoBack from "../../common/GoBack";
-import Checkout from "./components/Checkout";
-import Summary from "./components/Summary";
-import styles from "./index.module.scss";
-import { selectCartProducts, selectTotalPrice } from "../../store/cartSlice";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fakeSendData } from "../../services/fakeSendData";
-import Confirmation from "./components/Confirmation";
-import Backdrop from "../../common/Backdrop";
-import { removeAllProductsFromCart } from "../../store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 import {
   addBoughtProducts,
   setGrandTotalPrice,
-} from "../../store/boughtProductsSlice";
+} from "store/boughtProductsSlice";
+import { selectCartProducts, selectTotalPrice } from "store/cartSlice";
+import { removeAllProductsFromCart } from "store/cartSlice";
+import { fakeSendData } from "services/fakeSendData";
+import Container from "common/Container";
+import GoBack from "common/GoBack";
+import Checkout from "./components/Checkout";
+import Summary from "./components/Summary";
+import Confirmation from "./components/Confirmation";
+import Backdrop from "common/Backdrop";
+import styles from "./index.module.scss";
 
 const CheckoutPage = () => {
   const [isSendingData, setIsSendingData] = useState(false);
@@ -33,6 +34,8 @@ const CheckoutPage = () => {
     if (!cartProducts.length) {
       navigate("/home");
     }
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartProducts]);
 
   const onFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

@@ -1,8 +1,9 @@
 import { useState } from "react";
-import styles from "./index.module.scss";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../../../../store/cartSlice";
-import { ProductType } from "../../../../../fakeAPIResponseTypes";
+
+import { addProduct } from "store/cartSlice";
+import { ProductType } from "fakeAPIResponseTypes";
+import styles from "./index.module.scss";
 
 type AddProductProps = {
   product: ProductType;

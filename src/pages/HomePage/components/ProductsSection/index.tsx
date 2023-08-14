@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+
+import AnimationWrapper from "common/AnimationWrapper";
 import styles from "./index.module.scss";
-import AnimationWrapper from "../../../../common/AnimationWrapper";
 
 const ProductsSection = () => {
   return (

@@ -1,7 +1,8 @@
 import { useMediaQuery } from "@material-ui/core";
-import { Image } from "../../../../fakeAPIResponseTypes";
+
+import AnimationWrapper from "common/AnimationWrapper";
+import { Image } from "fakeAPIResponseTypes";
 import styles from "./index.module.scss";
-import AnimationWrapper from "../../../../common/AnimationWrapper";
 
 type GalleryProps = {
   gallery: {

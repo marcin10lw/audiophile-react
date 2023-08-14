@@ -1,4 +1,5 @@
 import { takeEvery, select, call } from "redux-saga/effects";
+
 import { CartProduct, selectCartProducts, selectTotalPrice } from "./cartSlice";
 import { saveCartValueToLocalStorage } from "./cartValuesLocalStorage";
 

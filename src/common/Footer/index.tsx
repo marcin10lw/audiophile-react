@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
+
 import Container from "../Container";
-import styles from "./index.module.scss";
+import NavigationList from "../NavigationList";
 import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Facebook } from "./images/icon-facebook.svg";
 import { ReactComponent as Twitter } from "./images/icon-twitter.svg";
 import { ReactComponent as Instagram } from "./images/icon-instagram.svg";
-import NavigationList from "../NavigationList";
+import styles from "./index.module.scss";
 
 const Footer = () => {
   const { pathname } = useLocation();
@@ -20,7 +21,11 @@ const Footer = () => {
       <Container>
         <div className={styles.footerWrapper}>
           <div className={styles.flexWrapper}>
-            <Link to="/home" className={styles.footer__logo} aria-label="go back to home page">
+            <Link
+              to="/home"
+              className={styles.footer__logo}
+              aria-label="go back to home page"
+            >
               <Logo />
             </Link>
             <nav>
@@ -36,17 +41,32 @@ const Footer = () => {
             </p>
             <ul className={styles.footer__icons}>
               <li>
-                <a href="/#" target="_blank" rel="noreferrer noopener" aria-label="visit out facebook">
+                <a
+                  href="/#"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="visit out facebook"
+                >
                   <Facebook />
                 </a>
               </li>
               <li>
-                <a href="/#" target="_blank" rel="noreferrer noopener" aria-label="visit out twitter">
+                <a
+                  href="/#"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="visit out twitter"
+                >
                   <Twitter />
                 </a>
               </li>
               <li>
-                <a href="/#" target="_blank" rel="noreferrer noopener" aria-label="visit out instagram">
+                <a
+                  href="/#"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="visit out instagram"
+                >
                   <Instagram />
                 </a>
               </li>

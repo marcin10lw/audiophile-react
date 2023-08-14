@@ -1,7 +1,8 @@
-import { QueryFunction } from "@tanstack/react-query";
 import axios from "axios";
-import { ProductAPIResponse } from "../fakeAPIResponseTypes";
+import { QueryFunction } from "@tanstack/react-query";
 import { wait } from "@testing-library/user-event/dist/utils";
+
+import { ProductAPIResponse } from "fakeAPIResponseTypes";
 
 export const getProducts: QueryFunction<
   ProductAPIResponse,

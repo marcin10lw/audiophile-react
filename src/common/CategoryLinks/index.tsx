@@ -1,5 +1,5 @@
-import styles from "./index.module.scss";
 import CategoryLink from "./CategoryLink";
+import styles from "./index.module.scss";
 
 type CategoryLinksProps = {
   onClick?: () => void;

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./store";
 import { toast } from "react-toastify";
+
+import { RootState } from "./store";
 import { getCartValueFromLocalStorage } from "./cartValuesLocalStorage";
 
 export type CartProduct = {

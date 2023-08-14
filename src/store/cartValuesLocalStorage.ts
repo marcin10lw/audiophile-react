@@ -5,7 +5,7 @@ type LocalStorageValueType = {
   totalPrice: number;
 };
 
-export const getCartValueFromLocalStorage = () => {
+export const getCartValueFromLocalStorage = (): LocalStorageValueType => {
   const localStorageCartProducts = localStorage.getItem("cart");
 
   if (!localStorageCartProducts) {
@@ -15,7 +15,7 @@ export const getCartValueFromLocalStorage = () => {
     };
   }
 
-  return JSON.parse(localStorageCartProducts) as LocalStorageValueType;
+  return JSON.parse(localStorageCartProducts);
 };
 
 export const saveCartValueToLocalStorage = (value: {

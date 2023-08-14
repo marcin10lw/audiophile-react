@@ -1,8 +1,9 @@
-import styles from "./index.module.scss";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../../../services/getProducts";
 import { useQuery } from "@tanstack/react-query";
+
+import { getProducts } from "services/getProducts";
 import CategoryProduct from "./CategoryProduct";
+import styles from "./index.module.scss";
 
 const Products = () => {
   const { name } = useParams();

@@ -1,14 +1,15 @@
-import { useSelector } from "react-redux";
-import CartItem from "../../../../common/CartItem";
-import confirmationIcon from "./icon-order-confirmation.svg";
-import styles from "./index.module.scss";
 import { useState } from "react";
-import { formatPrice } from "../../../../utils/formatPrice";
+import { useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
+
 import {
   selectBoughtProducts,
   selectGrandTotalPrice,
-} from "../../../../store/boughtProductsSlice";
+} from "store/boughtProductsSlice";
+import { formatPrice } from "utils/formatPrice";
+import CartItem from "common/CartItem";
+import confirmationIcon from "./icon-order-confirmation.svg";
+import styles from "./index.module.scss";
 
 type ConfirmationProps = {
   showConfirmation: boolean;

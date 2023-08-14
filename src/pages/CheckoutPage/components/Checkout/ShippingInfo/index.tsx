@@ -1,6 +1,7 @@
-import formStyles from "../index.module.scss";
-import styles from "./index.module.scss";
 import InputMask from "react-input-mask";
+
+import styles from "./index.module.scss";
+import formStyles from "../index.module.scss";
 
 const ShippingInfo = () => {
   return (

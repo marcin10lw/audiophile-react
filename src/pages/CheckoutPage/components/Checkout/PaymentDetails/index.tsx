@@ -1,8 +1,9 @@
 import { useState } from "react";
+import InputMask from "react-input-mask";
+
+import cashOnDeliveryIcon from "./icon-cash-on-delivery.svg";
 import formStyles from "../index.module.scss";
 import styles from "./index.module.scss";
-import cashOnDeliveryIcon from "./icon-cash-on-delivery.svg";
-import InputMask from "react-input-mask";
 
 const PaymentDetails = () => {
   const [paymentMethod, setPaymentMethod] = useState("eMoney");

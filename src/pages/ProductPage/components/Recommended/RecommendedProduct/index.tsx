@@ -1,7 +1,8 @@
-import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
-import { Image } from "../../../../../fakeAPIResponseTypes";
 import { useMediaQuery } from "@material-ui/core";
+
+import { Image } from "fakeAPIResponseTypes";
+import styles from "./index.module.scss";
 
 type RecommendedProductProps = {
   image: Image;

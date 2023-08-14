@@ -1,6 +1,7 @@
-import { AnimatePresence, motion } from "framer-motion";
-import styles from "./index.module.scss";
 import { MouseEventHandler } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+import styles from "./index.module.scss";
 
 type BackdropProps = {
   onClick?: MouseEventHandler<HTMLDivElement>;

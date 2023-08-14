@@ -1,12 +1,13 @@
 import ReactDOM from "react-dom/client";
-import "./scss/globals/globalStyle.scss";
-import App from "./App";
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import App from "App";
+import { store } from "store/store";
+import "scss/globals/globalStyle.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

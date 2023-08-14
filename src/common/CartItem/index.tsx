@@ -1,12 +1,9 @@
-import { useDispatch } from "react-redux";
-import {
-  CartProduct,
-  decreaseAmount,
-  increaseAmount,
-} from "../../store/cartSlice";
-import { formatPrice } from "../../utils/formatPrice";
-import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { CartProduct, decreaseAmount, increaseAmount } from "store/cartSlice";
+import { formatPrice } from "utils/formatPrice";
+import styles from "./index.module.scss";
 
 type CartItemProps = {
   product: CartProduct;

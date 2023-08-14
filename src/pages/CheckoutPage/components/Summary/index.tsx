@@ -1,7 +1,7 @@
-import CartList from "../../../../common/CartList";
-import styles from "./index.module.scss";
-import { formatPrice } from "../../../../utils/formatPrice";
+import CartList from "common/CartList";
 import Loader from "./Loader";
+import { formatPrice } from "utils/formatPrice";
+import styles from "./index.module.scss";
 
 type SummaryProps = {
   isSendingData: boolean;

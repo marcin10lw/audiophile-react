@@ -1,18 +1,19 @@
+import { useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useMediaQuery } from "@material-ui/core";
 import { motion } from "framer-motion";
-import NavigationList from "../NavigationList";
-import styles from "./index.module.scss";
+
+import Cart from "./Cart";
+import Backdrop from "common/Backdrop";
+import NavigationList from "common/NavigationList";
+import CategoryLinks from "common/CategoryLinks";
 import { ReactComponent as CartIcon } from "./images/icon-cart.svg";
 import { ReactComponent as Logo } from "../logo.svg";
 import { ReactComponent as Hamburger } from "./images/icon-hamburger.svg";
-import { useRef, useState } from "react";
-import CategoryLinks from "../CategoryLinks";
 import { menuVariants } from "./variants";
-import Backdrop from "../Backdrop";
-import { useMediaQuery } from "@material-ui/core";
-import Cart from "./Cart";
-import { useSelector } from "react-redux";
-import { selectCartProducts } from "../../store/cartSlice";
+import { selectCartProducts } from "store/cartSlice";
+import styles from "./index.module.scss";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

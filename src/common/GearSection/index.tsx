@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+
 import AnimationWrapper from "../AnimationWrapper";
 import styles from "./index.module.scss";
 

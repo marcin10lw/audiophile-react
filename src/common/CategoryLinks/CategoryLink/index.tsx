@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "./index.module.scss";
+
 import { ReactComponent as Arrow } from "../icon-arrow-right.svg";
+import styles from "./index.module.scss";
 
 type CategoryLinkProps = {
   title: string;

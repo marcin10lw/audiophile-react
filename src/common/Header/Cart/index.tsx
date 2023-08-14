@@ -1,12 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
-import CartList from "../../CartList";
-import styles from "./index.module.scss";
-import { useSelector } from "react-redux";
-import { selectCartProducts, selectTotalPrice } from "../../../store/cartSlice";
-import { formatPrice } from "../../../utils/formatPrice";
 import { useEffect, useRef, useState } from "react";
-import Warning from "./Warning";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
+import Warning from "./Warning";
+import CartList from "common/CartList";
+import { selectCartProducts, selectTotalPrice } from "store/cartSlice";
+import { formatPrice } from "utils/formatPrice";
+import styles from "./index.module.scss";
 
 type CartProps = {
   showCart: boolean;
@@ -43,6 +44,8 @@ const Cart = ({ showCart, closeCart, buttonRef }: CartProps) => {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

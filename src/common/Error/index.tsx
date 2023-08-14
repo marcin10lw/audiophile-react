@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "./index.module.scss";
 import { BiError } from "react-icons/bi";
+
+import styles from "./index.module.scss";
 
 const Error = () => {
   return (

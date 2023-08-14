@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+
 import styles from "./index.module.scss";
 
 type ContainerProps = PropsWithChildren<{ wide?: boolean }>;

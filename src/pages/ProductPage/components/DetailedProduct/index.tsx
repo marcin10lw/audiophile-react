@@ -1,11 +1,12 @@
-import styles from "./index.module.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import useInViewAnimation from "../../../../hooks/useInViewAnimation";
+
 import { productVariants } from "./productVariants";
-import { ProductType } from "../../../../fakeAPIResponseTypes";
+import { ProductType } from "fakeAPIResponseTypes";
+import { formatPrice } from "utils/formatPrice";
+import useInViewAnimation from "hooks/useInViewAnimation";
 import AddProduct from "./AddProduct";
-import { formatPrice } from "../../../../utils/formatPrice";
+import styles from "./index.module.scss";
 
 type ProductProps = {
   product: ProductType;

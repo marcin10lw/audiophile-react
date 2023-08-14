@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { CartProduct } from "./cartSlice";
 import { RootState } from "./store";
 
