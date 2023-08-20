@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { CartProduct } from "./cartSlice";
 import { RootState } from "./store";
 
-type BoughtProduct = CartProduct;
+export type BoughtProduct = CartProduct;
 
 type InitialStateType = {
   boughtProducts: BoughtProduct[];

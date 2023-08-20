@@ -6,6 +6,7 @@ import {
   selectBoughtProducts,
   selectGrandTotalPrice,
 } from "store/boughtProductsSlice";
+import { getTotalAmount } from "./getTotalAmount";
 import { formatPrice } from "utils/formatPrice";
 import CartItem from "common/CartItem";
 import confirmationIcon from "./icon-order-confirmation.svg";
@@ -20,6 +21,8 @@ const Confirmation = ({ showConfirmation, onClick }: ConfirmationProps) => {
   const [showAllProducts, setShowAllProducts] = useState(false);
   const grandTotalPrice = useSelector(selectGrandTotalPrice);
   const boughtProducts = useSelector(selectBoughtProducts);
+  const totalBoughtProductsAmount = getTotalAmount(boughtProducts);
+
   const renderedCartProducts = showAllProducts
     ? boughtProducts
     : [boughtProducts[0]];
@@ -59,7 +62,9 @@ const Confirmation = ({ showConfirmation, onClick }: ConfirmationProps) => {
                 >
                   {showAllProducts
                     ? "View less"
-                    : `and ${boughtProducts.length - 1} other item(s)`}
+                    : `and ${
+                        totalBoughtProductsAmount - boughtProducts[0].amount
+                      } other item(s)`}
                 </button>
               )}
             </div>
