@@ -50,18 +50,42 @@
 
 .label {
   @include label;
+}
 
-  &:has(+ .input:focus:not(:placeholder-shown):invalid) {
-    color: $red;
+.input {
+  position: relative;
+
+  label {
+    @include label;
+  }
+
+  input {
+    @include input;
+
+    &:focus {
+      outline: 1px solid $orange;
+      caret-color: $orange;
+    }
   }
 }
 
-.inputWrapper {
-  position: relative;
+.input--error {
+  label {
+    color: $red;
+  }
+
+  input {
+    outline: 2px solid $red;
+
+    &:focus {
+      outline: 1px solid $red;
+      caret-color: $red;
+    }
+  }
 }
 
 .warning {
-  display: none;
+  display: block;
   position: absolute;
   top: 3px;
   right: 0;
@@ -71,21 +95,4 @@
   line-height: 16.4px;
   letter-spacing: -0.21px;
   margin-left: auto;
-}
-
-.input {
-  @include input;
-
-  &:focus {
-    outline: 1px solid $orange;
-    caret-color: $orange;
-  }
-
-  &:focus:not(:placeholder-shown):invalid {
-    outline: 2px solid $red;
-  }
-
-  &:focus:not(:placeholder-shown):invalid + .warning {
-    display: block;
-  }
 }

@@ -1,56 +1,63 @@
-import InputMask from "react-input-mask";
+import { UseFormRegister, FieldErrors } from "react-hook-form/dist/types";
 
+import { FormData } from "../Form/types";
 import formStyles from "../index.module.scss";
 import styles from "./index.module.scss";
 
-const BillingDetails = () => {
+type BillingDetailsProps = {
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
+};
+
+const BillingDetails = ({ register, errors }: BillingDetailsProps) => {
   return (
     <fieldset className={styles.billing}>
       <legend className={formStyles.legend}>BILLING DETAILS</legend>
       <div className={formStyles.gridWrapper}>
-        <div>
-          <label className={formStyles.label} htmlFor="name">
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            placeholder="Alexei Ward"
-            className={formStyles.input}
-          />
+        <div
+          className={`${formStyles.input} ${
+            errors.name ? formStyles["input--error"] : ""
+          }`}
+        >
+          <label htmlFor="name">Name</label>
+          <input id="name" {...register("name")} placeholder="Alexei Ward" />
+          {errors.name && (
+            <span className={formStyles.warning}>{errors.name.message}</span>
+          )}
         </div>
-        <div className={formStyles.inputWrapper}>
-          <label className={formStyles.label} htmlFor="email">
-            Email Address
-          </label>
+
+        <div
+          className={`${formStyles.input} ${
+            errors.email ? formStyles["input--error"] : ""
+          }`}
+        >
+          <label htmlFor="email">Email Address</label>
           <input
             id="email"
-            name="email"
             type="email"
-            required
+            {...register("email")}
             placeholder="alexeiward@mail.com"
-            className={formStyles.input}
           />
-          <span className={formStyles.warning}>Wrong format</span>
+          {errors.email && (
+            <span className={formStyles.warning}>{errors.email.message}</span>
+          )}
         </div>
-        <div className={formStyles.inputWrapper}>
-          <label className={formStyles.label} htmlFor="tel">
-            Phone Number
-          </label>
-          <InputMask
-            pattern="[+]\d{1,2}\s\d{3}[-]\d{3}[-]\d{4}"
-            mask="+1 999-999-9999"
-            maskChar=" "
+
+        <div
+          className={`${formStyles.input} ${
+            errors.phone ? formStyles["input--error"] : ""
+          }`}
+        >
+          <label htmlFor="tel">Phone Number</label>
+          <input
+            // pattern="[+]\d{1,2}\s\d{3}[-]\d{3}[-]\d{4}"
             id="tel"
-            type="tel"
-            name="phone"
-            required
+            {...register("phone")}
             placeholder="+1 202-555-0136"
-            className={formStyles.input}
           />
-          <span className={formStyles.warning}>Wrong format</span>
+          {errors.phone && (
+            <span className={formStyles.warning}>{errors.phone.message}</span>
+          )}
         </div>
       </div>
     </fieldset>

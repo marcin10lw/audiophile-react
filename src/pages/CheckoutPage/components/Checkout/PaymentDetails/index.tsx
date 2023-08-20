@@ -1,13 +1,23 @@
-import { useState } from "react";
-import InputMask from "react-input-mask";
+import { FieldErrors, UseFormRegister } from "react-hook-form/dist/types";
 
+import { FormData } from "../Form/types";
 import cashOnDeliveryIcon from "./icon-cash-on-delivery.svg";
 import formStyles from "../index.module.scss";
 import styles from "./index.module.scss";
 
-const PaymentDetails = () => {
-  const [paymentMethod, setPaymentMethod] = useState("eMoney");
+type PaymentDetailsProps = {
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
+  paymentMethod: string;
+  setPaymentMethod: React.Dispatch<React.SetStateAction<string>>;
+};
 
+const PaymentDetails = ({
+  errors,
+  paymentMethod,
+  register,
+  setPaymentMethod,
+}: PaymentDetailsProps) => {
   return (
     <fieldset>
       <legend className={formStyles.legend}>PAYMENT DETAILS</legend>
@@ -49,36 +59,40 @@ const PaymentDetails = () => {
       </div>
       {paymentMethod === "eMoney" ? (
         <div className={styles.eMoney}>
-          <div className={formStyles.inputWrapper}>
-            <label htmlFor="eMoneyNumber" className={formStyles.label}>
-              e-Money Number
-            </label>
-            <InputMask
-              pattern="\d{9}"
-              mask="999999999"
+          <div
+            className={`${formStyles.input} ${
+              errors.eMoneyNumber ? formStyles["input--error"] : ""
+            }`}
+          >
+            <label htmlFor="eMoneyNumber">e-Money Number</label>
+            <input
               id="eMoneyNumber"
-              name="eMoneyNumber"
-              required={paymentMethod === "eMoney"}
-              className={formStyles.input}
+              {...register("eMoneyNumber", { required: false })}
               placeholder="238521993"
             />
-            <span className={formStyles.warning}>Wrong format</span>
+            {errors.eMoneyNumber && (
+              <span className={formStyles.warning}>
+                {errors.eMoneyNumber.message}
+              </span>
+            )}
           </div>
 
-          <div className={formStyles.inputWrapper}>
-            <label htmlFor="eMoneyPin" className={formStyles.label}>
-              e-Money PIN
-            </label>
-            <InputMask
-              pattern="\d{4}"
-              mask="9999"
+          <div
+            className={`${formStyles.input} ${
+              errors.eMoneyPin ? formStyles["input--error"] : ""
+            }`}
+          >
+            <label htmlFor="eMoneyPin">e-Money PIN</label>
+            <input
               id="eMoneyPin"
-              name="eMoneyPin"
-              required={paymentMethod === "eMoney"}
+              {...register("eMoneyPin")}
               placeholder="6891"
-              className={formStyles.input}
             />
-            <span className={formStyles.warning}>Wrong format</span>
+            {errors.eMoneyPin && (
+              <span className={formStyles.warning}>
+                {errors.eMoneyPin.message}
+              </span>
+            )}
           </div>
         </div>
       ) : (

@@ -1,71 +1,80 @@
-import InputMask from "react-input-mask";
+import { FieldErrors, UseFormRegister } from "react-hook-form/dist/types";
 
-import styles from "./index.module.scss";
+import { FormData } from "../Form/types";
 import formStyles from "../index.module.scss";
+import styles from "./index.module.scss";
 
-const ShippingInfo = () => {
+type ShippingInfoProps = {
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
+};
+
+const ShippingInfo = ({ register, errors }: ShippingInfoProps) => {
   return (
     <fieldset className={styles.shippingInfo}>
       <legend className={formStyles.legend}>SHIPPING INFO</legend>
-      <div>
-        <label className={formStyles.label} htmlFor="address">
-          Your Address
-        </label>
+      <div
+        className={`${formStyles.input} ${
+          errors.address ? formStyles["input--error"] : ""
+        }`}
+      >
+        <label htmlFor="address">Your Address</label>
         <input
           id="address"
-          type="text"
-          name="address"
-          required
+          {...register("address")}
           placeholder="1137 Williams Avenue"
-          className={formStyles.input}
         />
+        {errors.address && (
+          <span className={formStyles.warning}>{errors.address.message}</span>
+        )}
       </div>
+
       <div className={formStyles.gridWrapper}>
-        <div className={formStyles.inputWrapper}>
+        <div
+          className={`${formStyles.input} ${
+            errors.zipCode ? formStyles["input--error"] : ""
+          }`}
+        >
           <label className={formStyles.label} htmlFor="zip">
             ZIP Code
           </label>
-          <InputMask
-            pattern="\d{5}"
-            mask="99999"
+          <input
             id="zip"
-            type="text"
-            name="zipCode"
-            required
+            {...register("zipCode")}
             placeholder="10001"
             className={formStyles.input}
           />
-          <span className={formStyles.warning}>Wrong format</span>
+          {errors.zipCode && (
+            <span className={formStyles.warning}>{errors.zipCode.message}</span>
+          )}
         </div>
-        <div>
-          <label
-            className={formStyles.label}
-            placeholder="New York"
-            htmlFor="city"
-          >
-            City
-          </label>
-          <input
-            id="city"
-            type="text"
-            name="city"
-            required
-            placeholder="New York"
-            className={formStyles.input}
-          />
+
+        <div
+          className={`${formStyles.input} ${
+            errors.city ? formStyles["input--error"] : ""
+          }`}
+        >
+          <label htmlFor="city">City</label>
+          <input id="city" {...register("city")} placeholder="New York" />
+          {errors.city && (
+            <span className={formStyles.warning}>{errors.city.message}</span>
+          )}
         </div>
-        <div>
-          <label className={formStyles.label} htmlFor="country">
-            Country
-          </label>
+
+        <div
+          className={`${formStyles.input} ${
+            errors.country ? formStyles["input--error"] : ""
+          }`}
+        >
+          <label htmlFor="country">Country</label>
           <input
             id="country"
-            type="text"
-            name="country"
-            required
+            {...register("country")}
             placeholder="United States"
-            className={formStyles.input}
           />
+          {errors.country && (
+            <span className={formStyles.warning}>{errors.country.message}</span>
+          )}
         </div>
       </div>
     </fieldset>
