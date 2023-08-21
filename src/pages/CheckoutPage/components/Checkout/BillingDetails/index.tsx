@@ -1,4 +1,5 @@
 import { UseFormRegister, FieldErrors } from "react-hook-form/dist/types";
+import InputMask from "react-input-mask";
 
 import { FormData } from "../Form/types";
 import formStyles from "../index.module.scss";
@@ -49,9 +50,11 @@ const BillingDetails = ({ register, errors }: BillingDetailsProps) => {
           }`}
         >
           <label htmlFor="tel">Phone Number</label>
-          <input
-            // pattern="[+]\d{1,2}\s\d{3}[-]\d{3}[-]\d{4}"
+          <InputMask
             id="tel"
+            type="tel"
+            mask="+1 999-999-9999"
+            maskChar="_"
             {...register("phone")}
             placeholder="+1 202-555-0136"
           />
