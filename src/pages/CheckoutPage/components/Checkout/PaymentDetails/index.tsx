@@ -1,4 +1,5 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form/dist/types";
+import InputMask from "react-input-mask";
 
 import { FormData } from "../Form/types";
 import cashOnDeliveryIcon from "./icon-cash-on-delivery.svg";
@@ -65,7 +66,8 @@ const PaymentDetails = ({
             }`}
           >
             <label htmlFor="eMoneyNumber">e-Money Number</label>
-            <input
+            <InputMask
+              mask="999999999"
               id="eMoneyNumber"
               {...register("eMoneyNumber", { required: false })}
               placeholder="238521993"
@@ -83,7 +85,8 @@ const PaymentDetails = ({
             }`}
           >
             <label htmlFor="eMoneyPin">e-Money PIN</label>
-            <input
+            <InputMask
+              mask="9999"
               id="eMoneyPin"
               {...register("eMoneyPin")}
               placeholder="6891"

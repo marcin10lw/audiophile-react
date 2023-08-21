@@ -39,7 +39,6 @@ const ShippingInfo = ({ register, errors }: ShippingInfoProps) => {
           <label htmlFor="zip">ZIP Code</label>
           <InputMask
             mask="99999"
-            maskChar=""
             id="zip"
             {...register("zipCode")}
             placeholder="10001"

@@ -32,10 +32,7 @@ const useCustomForm = (submitCallback: () => void) => {
     resolver: zodResolver(schema),
   });
 
-  console.log(errors);
-
   const onFormSubmit = async (formData: FormData) => {
-    console.log(formData);
     setStatus("loading");
 
     try {
