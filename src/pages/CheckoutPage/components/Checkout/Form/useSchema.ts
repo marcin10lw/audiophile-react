@@ -9,8 +9,8 @@ const useSchema = (paymentMethod: string) => {
       .string()
       .min(9, { message: "Wrong format" })
       .regex(/^\+\d{1,3} \d{3}-\d{3}-\d{4}$/, { message: "Wrong format" }),
-    address: z.string().min(1, { message: "Required" }),
-    zipCode: z.string().min(1, { message: "Wrong format" }),
+    address: z.string().trim().min(1, { message: "Required" }),
+    zipCode: z.string().trim().length(5, { message: "Wrong format" }),
     city: z.string().min(1, { message: "Required" }),
     country: z.string().min(1, { message: "Required" }),
     eMoneyNumber:

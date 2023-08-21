@@ -1,4 +1,5 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form/dist/types";
+import InputMask from "react-input-mask";
 
 import { FormData } from "../Form/types";
 import formStyles from "../index.module.scss";
@@ -35,14 +36,13 @@ const ShippingInfo = ({ register, errors }: ShippingInfoProps) => {
             errors.zipCode ? formStyles["input--error"] : ""
           }`}
         >
-          <label className={formStyles.label} htmlFor="zip">
-            ZIP Code
-          </label>
-          <input
+          <label htmlFor="zip">ZIP Code</label>
+          <InputMask
+            mask="99999"
+            maskChar=""
             id="zip"
             {...register("zipCode")}
             placeholder="10001"
-            className={formStyles.input}
           />
           {errors.zipCode && (
             <span className={formStyles.warning}>{errors.zipCode.message}</span>
