@@ -1,16 +1,16 @@
-# Marcin Augun - Augiophile e-commerce
+# Marcin Augun - Audio Store
 
-This is a frontend portfolio project I worked on based on a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). The goal was to create a multi-page e-commerce website and make it visually match the provided design as closely as possible.
+This is a frontend portfolio project I worked on based on a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx). The goal was to create a multi-page store website and make it visually match the provided design as closely as possible.
 
 ## Live Site URL: [marcin10lw.github.io/audiophile-react](https://marcin10lw.github.io/audiophile-react/)
 
 ## Project Description
 
-The project is an e-commerce website where users can browse products, add them to the cart, and complete the checkout process. It provides a responsive layout, interactive elements, and features such as product management, cart functionality, and form validation. After checkout, users receive an order confirmation modal.
+The project is an audio store website where users can browse products, add them to the cart, and complete the checkout process. It provides a responsive layout, interactive elements, and features such as product management, cart functionality, and form validation. After checkout, users receive an order confirmation modal.
 
 ## Problem Solved
 
-This project demonstrates my frontend development skills in building a visually appealing and functional e-commerce website with a seamless user experience. It showcases my ability to implement responsive designs, interactive features, and a smooth checkout process.
+This project demonstrates my frontend development skills in building a visually appealing and functional websites with a seamless user experience. It showcases my ability to implement responsive designs, interactive features, and a smooth checkout process.
 
 # 💻 Project Tech Stack:
 
